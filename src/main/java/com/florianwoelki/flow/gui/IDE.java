@@ -20,7 +20,7 @@ public class IDE extends JFrame
         this.text.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
 
         JButton run = new JButton("Run");
-        run.addActionListener((event) -> new Console()); // TODO: Add Class
+        run.addActionListener((event) -> new Console(new com.florianwoelki.flow.lang.Class(this.text.getText().split("\n"))));
 
         JButton save = new JButton("Save");
         save.addActionListener((event) ->

@@ -15,7 +15,7 @@ public class Class extends Block
 
     private final String[] code;
 
-    public Class(Block superBlock, String[] code)
+    public Class(String[] code)
     {
         super(null);
 

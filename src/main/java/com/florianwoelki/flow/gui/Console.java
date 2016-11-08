@@ -1,5 +1,7 @@
 package com.florianwoelki.flow.gui;
 
+import com.florianwoelki.flow.exception.InvalidCodeException;
+
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
@@ -18,7 +20,7 @@ public class Console extends JFrame
     private boolean waiting = false;
     private String result = null;
 
-    public Console() // TODO: Add Class.
+    public Console(final com.florianwoelki.flow.lang.Class clazz) // TODO: Add Class.
     {
         super("Flow - Console");
 
@@ -60,7 +62,16 @@ public class Console extends JFrame
 
         new Thread(() ->
         {
-            // TODO: Run Class.
+            try
+            {
+                clazz.run(Console.this);
+            }
+            catch (InvalidCodeException e)
+            {
+                this.dispose();
+
+                Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+            }
         }).start();
     }
 
