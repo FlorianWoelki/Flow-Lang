@@ -2,7 +2,7 @@
 First character is a letter, any proceeding characters are letters or numbers.
 
 <type>
-A primitive type: string, int, boolean, etc.
+A primitive type: string, integer, boolean, etc.
 
 <value>:
 Either an identifier (for a variable) or a literal (1, "Hello", true)
@@ -14,7 +14,7 @@ Method Declaration:
 `method <identifier = name> (<type> <identifier = name>...) [returns <type>] end <identifier = name>`
 
 Variable Declaration:
-`var <type> <identifier = name> [= <value>]`
+`var <type> <identifier = name> [<value>]`
 
 Print Statement:
 `print <value>`
