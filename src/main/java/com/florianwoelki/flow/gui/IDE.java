@@ -20,7 +20,7 @@ public class IDE extends JFrame
         this.text.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
 
         JButton run = new JButton("Run");
-        run.addActionListener((event) -> System.out.println("Console NOW")); // TODO: Add Console
+        run.addActionListener((event) -> new Console()); // TODO: Add Class
 
         JButton save = new JButton("Save");
         save.addActionListener((event) ->
