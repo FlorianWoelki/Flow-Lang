@@ -11,7 +11,7 @@ Class Declaration:
 `class <identifier>`
 
 Method Declaration:
-`method <identifier = name> (<type> <identifier = name>...) [returns <type>] end`
+`method <identifier = name> (<type> <identifier = name>...) [returns <type>] end <identifier = name>`
 
 Variable Declaration:
 `var <type> <identifier = name> [= <value>]`

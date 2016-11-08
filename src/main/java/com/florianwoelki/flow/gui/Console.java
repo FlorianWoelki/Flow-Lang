@@ -106,7 +106,7 @@ public class Console extends JFrame
         {
             try
             {
-                this.text.getDocument().insertString(this.text.getDocument().getLength(), this.text + "\n", null);
+                this.text.getDocument().insertString(this.text.getDocument().getLength(), text + "\n", null);
             }
             catch (BadLocationException e)
             {

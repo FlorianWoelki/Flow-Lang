@@ -45,7 +45,7 @@ public class Class extends Block
 
                 currentMethod = null;
             }
-            else if (line.startsWith("use"))
+            else if (line.startsWith("print"))
             {
                 this.commandManager.parse(this, line);
             }

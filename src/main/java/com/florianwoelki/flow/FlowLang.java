@@ -26,6 +26,20 @@ public class FlowLang
     {
         StringBuilder builder = new StringBuilder();
 
+        for (String str : strs)
+        {
+            if (str.startsWith("_") && block != null && block.getVariable(str.substring(1)) != null)
+            {
+                builder.append(block.getVariable(str.substring(1)).getValue());
+            }
+            else
+            {
+                builder.append(str);
+            }
+
+            builder.append(" ");
+        }
+
         return builder.toString().trim();
     }
 }
