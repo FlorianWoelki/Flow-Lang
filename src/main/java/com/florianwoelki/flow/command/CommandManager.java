@@ -22,6 +22,7 @@ public class CommandManager
         this.console = console;
 
         this.commands.add(new Print());
+        this.commands.add(new Var());
     }
 
     public void parse(Block block, String input) throws InvalidCodeException
