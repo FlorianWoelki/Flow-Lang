@@ -14,7 +14,7 @@ Method Declaration:
 `method <identifier = name> (<type> <identifier = name>...) [returns <type>] end <identifier = name>`
 
 Variable Declaration:
-`var <type> <identifier = name> [<value>]`
+`var <type> <identifier = name> [= <value>]`
 
 Print Statement:
 `print <value>`

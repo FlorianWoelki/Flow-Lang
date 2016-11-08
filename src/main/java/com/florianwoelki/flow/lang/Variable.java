@@ -74,8 +74,8 @@ public class Variable
         return this.value;
     }
 
-    public void setValue(String value)
+    public void setValue(Object value)
     {
-        this.value = value;
+        this.value = String.valueOf(value);
     }
 }

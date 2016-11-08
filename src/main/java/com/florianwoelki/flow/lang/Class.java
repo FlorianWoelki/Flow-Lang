@@ -45,7 +45,7 @@ public class Class extends Block
 
                 currentMethod = null;
             }
-            else if (line.startsWith("print"))
+            else if (line.startsWith("var"))
             {
                 this.commandManager.parse(this, line);
             }
