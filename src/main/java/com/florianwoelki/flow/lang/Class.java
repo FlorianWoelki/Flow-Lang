@@ -13,7 +13,7 @@ import java.util.List;
 public class Class extends Block
 {
     private List<Method> methods;
-    private CommandManager commandManager;
+    public CommandManager commandManager;
 
     private final String[] code;
 

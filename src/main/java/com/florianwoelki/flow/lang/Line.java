@@ -18,6 +18,6 @@ public class Line extends Block
 
     public void runAfterParse() throws InvalidCodeException
     {
-
+        ((Class) this.getBlockTree()[0]).commandManager.parse(this.getSuperBlock(), line);
     }
 }
