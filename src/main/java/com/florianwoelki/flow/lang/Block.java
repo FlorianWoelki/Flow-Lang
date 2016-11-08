@@ -13,12 +13,14 @@ import java.util.List;
 public abstract class Block
 {
     private final Block superBlock;
+    private final List<Variable> vars;
     final List<Block> subBlocks;
     private final List<String> lines;
 
     public Block(Block superBlock)
     {
         this.superBlock = superBlock;
+        this.vars = new ArrayList<>();
         this.subBlocks = new ArrayList<>();
         this.lines = new ArrayList<>();
     }
@@ -53,6 +55,44 @@ public abstract class Block
         Collections.reverse(tree);
 
         return tree.toArray(new Block[tree.size()]);
+    }
+
+    public void addVariable(Variable.VariableType t, String name, Object value)
+    {
+        this.vars.add(new Variable(t, name, value));
+    }
+
+    public Variable getVariable(String name) throws InvalidCodeException
+    {
+        for (Block b : Arrays.copyOfRange(this.getBlockTree(), 0, this.getBlockTree().length - 1))
+        {
+            if (b.hasVariable(name))
+            {
+                return b.getVariable(name);
+            }
+        }
+
+        for (Variable v : this.vars)
+        {
+            if (v.getName().equals(name))
+            {
+                return v;
+            }
+        }
+
+        throw new InvalidCodeException("Variable " + name + " is not declared.");
+    }
+
+    public boolean hasVariable(String name)
+    {
+        for (Variable v : this.vars)
+        {
+            if (v.getName().equals(name))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void run() throws InvalidCodeException

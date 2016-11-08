@@ -7,13 +7,13 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
  */
 public abstract class ConditionalBlock extends Block
 {
-    public enum ConditionalBlockType
+    enum ConditionalBlockType
     {
         IF,
         WHILE;
     }
 
-    public enum CompareOperation
+    enum CompareOperation
     {
         EQUALS,
         NOTEEQUALS,
@@ -35,7 +35,7 @@ public abstract class ConditionalBlock extends Block
     final String bVal;
     final CompareOperation compareOp;
 
-    public ConditionalBlock(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
+    ConditionalBlock(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
     {
         super(superBlock);
 
