@@ -3,11 +3,16 @@ package com.florianwoelki.flow.lang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Florian Woelki on 08.11.16.
  */
 public class Class extends Block
 {
+    private List<Method> methods;
+
     private final String[] code;
 
     public Class(Block superBlock, String[] code)
@@ -19,10 +24,16 @@ public class Class extends Block
 
     public void run(Console console) throws InvalidCodeException
     {
+        this.methods = new ArrayList<>();
+
+        Method currentMethod = null;
+
         for (String line : this.code)
         {
             line = this.trimComments(line);
         }
+
+        this.getMethod("main").run();
 
         console.write("--Terminated.");
     }
@@ -44,6 +55,19 @@ public class Class extends Block
         }
 
         return fin.toString().trim();
+    }
+
+    public Method getMethod(String name) throws InvalidCodeException
+    {
+        for (Method m : this.methods)
+        {
+            if (m.getName().equals(name))
+            {
+                return m;
+            }
+        }
+
+        throw new InvalidCodeException("Method " + name + " does not exist.");
     }
 
     @Override
