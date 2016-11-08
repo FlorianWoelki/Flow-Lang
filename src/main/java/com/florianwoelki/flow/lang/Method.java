@@ -7,14 +7,23 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
  */
 public class Method extends Block
 {
-    public Method(Block superBlock)
+    private final String name;
+
+    public Method(Block superBlock, String name)
     {
         super(superBlock);
+
+        this.name = name;
     }
 
     @Override
     protected void runAfterParse() throws InvalidCodeException
     {
+        this.doBlocks();
+    }
 
+    public String getName()
+    {
+        return name;
     }
 }
