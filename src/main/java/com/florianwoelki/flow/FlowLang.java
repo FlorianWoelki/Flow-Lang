@@ -1,6 +1,8 @@
 package com.florianwoelki.flow;
 
+import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.IDE;
+import com.florianwoelki.flow.lang.Block;
 
 import javax.swing.*;
 
@@ -18,5 +20,12 @@ public class FlowLang
         });
 
         new IDE();
+    }
+
+    public static String implode(String[] strs, Block block) throws InvalidCodeException
+    {
+        StringBuilder builder = new StringBuilder();
+
+        return builder.toString().trim();
     }
 }
