@@ -11,25 +11,20 @@ import java.awt.event.KeyEvent;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Console extends JFrame
+public class Console extends JTextPane
 {
-    private final JTextPane text;
-
     private String lastInput;
 
-    private boolean waiting = false;
-    private String result = null;
+    private boolean waiting;
+    private String result;
 
-    public Console(final com.florianwoelki.flow.lang.Class clazz) // TODO: Add Class.
+    public Console()
     {
-        super("Flow - Console");
-
-        this.text = new JTextPane();
         Filter filter = new Filter();
-        ((AbstractDocument) text.getDocument()).setDocumentFilter(filter);
-        this.text.setEditable(false);
-        this.text.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
-        this.text.addKeyListener(new KeyAdapter()
+        ((AbstractDocument) this.getDocument()).setDocumentFilter(filter);
+        this.setEditable(false);
+        this.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
+        this.addKeyListener(new KeyAdapter()
         {
             @Override
             public void keyPressed(KeyEvent event)
@@ -40,26 +35,16 @@ public class Console extends JFrame
                 }
                 else if (event.getKeyCode() == KeyEvent.VK_ENTER)
                 {
-                    lastInput = text.getText().split("\n")[text.getText().split("\n").length - 1];
+                    lastInput = getText().split("\n")[getText().split("\n").length - 1];
 
                     if (waiting) result = lastInput;
                 }
             }
         });
+    }
 
-        JScrollPane scroll = new JScrollPane(this.text);
-        scroll.setBorder(null);
-        scroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-        new SmartScroller(scroll);
-
-        this.add(scroll);
-
-        this.setSize(640, 480);
-        this.setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setVisible(true);
-
+    public void run(final com.florianwoelki.flow.lang.Class clazz)
+    {
         new Thread(() ->
         {
             try
@@ -68,9 +53,7 @@ public class Console extends JFrame
             }
             catch (InvalidCodeException e)
             {
-                this.dispose();
-
-                Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                e.printStackTrace();
             }
         }).start();
     }
@@ -78,13 +61,13 @@ public class Console extends JFrame
     public String prompt()
     {
         this.waiting = true;
-        this.text.setEditable(true);
+        this.setEditable(true);
 
         while (this.result == null)
         {
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(100);
             }
             catch (InterruptedException e)
             {
@@ -93,7 +76,7 @@ public class Console extends JFrame
         }
 
         this.waiting = false;
-        this.text.setEditable(false);
+        this.setEditable(false);
 
         String localResult = this.result;
         this.result = null;
@@ -106,7 +89,7 @@ public class Console extends JFrame
         {
             try
             {
-                this.text.getDocument().insertString(this.text.getDocument().getLength(), text + "\n", null);
+                this.getDocument().insertString(this.getDocument().getLength(), text + "\n", null);
             }
             catch (BadLocationException e)
             {
@@ -123,9 +106,9 @@ public class Console extends JFrame
         {
             try
             {
-                if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(text.getDocument().getLength())))
+                if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(getDocument().getLength())))
                 {
-                    super.insertString(fb, text.getDocument().getLength(), string, null);
+                    super.insertString(fb, getDocument().getLength(), string, null);
                 }
             }
             catch (BadLocationException e)
@@ -138,7 +121,7 @@ public class Console extends JFrame
 
     public void remove(final DocumentFilter.FilterBypass fb, final int offset, final int length) throws BadLocationException
     {
-        if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(this.text.getDocument().getLength())))
+        if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(this.getDocument().getLength())))
         {
             remove(fb, offset, length);
         }
@@ -147,7 +130,7 @@ public class Console extends JFrame
 
     public void replace(final DocumentFilter.FilterBypass fb, final int offset, final int length, final String string, final AttributeSet attrs) throws BadLocationException
     {
-        if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(this.text.getDocument().getLength())))
+        if (getLineStartOffset(getLineOfOffset(offset)) == getLineStartOffset(getLineOfOffset(this.getDocument().getLength())))
         {
             replace(fb, offset, length, string, null);
         }
@@ -156,7 +139,7 @@ public class Console extends JFrame
 
     private int getLineOfOffset(int offset) throws BadLocationException
     {
-        Document doc = this.text.getDocument();
+        Document doc = this.getDocument();
         if (offset < 0)
         {
             throw new BadLocationException("Can't translate offset to line", -1);
@@ -174,14 +157,14 @@ public class Console extends JFrame
 
     private int getLineStartOffset(int line) throws BadLocationException
     {
-        Element map = this.text.getDocument().getDefaultRootElement();
+        Element map = this.getDocument().getDefaultRootElement();
         if (line < 0)
         {
             throw new BadLocationException("Negative line", -1);
         }
         else if (line > map.getElementCount())
         {
-            throw new BadLocationException("Given line too big", this.text.getDocument().getLength() + 1);
+            throw new BadLocationException("Given line too big", this.getDocument().getLength() + 1);
         }
         else
         {
@@ -192,6 +175,6 @@ public class Console extends JFrame
 
     private void setCaret()
     {
-        this.text.setCaretPosition(this.text.getDocument().getLength());
+        this.setCaretPosition(this.getDocument().getLength());
     }
 }

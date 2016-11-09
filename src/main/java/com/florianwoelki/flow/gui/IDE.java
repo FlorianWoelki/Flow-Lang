@@ -3,6 +3,7 @@ package com.florianwoelki.flow.gui;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.*;
 
 /**
@@ -10,6 +11,7 @@ import java.io.*;
  */
 public class IDE extends JFrame
 {
+    private final Console console;
     private final JTextPane text;
 
     public IDE()
@@ -19,10 +21,38 @@ public class IDE extends JFrame
         this.text = new JTextPane();
         this.text.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
 
-        JButton run = new JButton("Run");
-        run.addActionListener((event) -> new Console(new com.florianwoelki.flow.lang.Class(this.text.getText().split("\n"))));
+        JScrollPane scroll = new JScrollPane(this.text);
+        scroll.setBorder(null);
+        scroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
-        JButton save = new JButton("Save");
+        this.console = new Console();
+
+        JScrollPane consoleScroll = new JScrollPane(this.console);
+        consoleScroll.setBorder(null);
+        consoleScroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
+
+        JSplitPane split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, scroll, consoleScroll);
+        split.setOneTouchExpandable(true);
+        split.setDividerLocation(320);
+
+        this.add(split);
+
+        JMenuBar menuBar = new JMenuBar();
+        JMenu menu = new JMenu("File");
+        JMenuItem run = new JMenuItem("Run"), save = new JMenuItem("Save"), load = new JMenuItem("Load");
+
+        menuBar.add(menu);
+
+        menu.add(run);
+        menu.add(save);
+        menu.add(load);
+
+        this.setJMenuBar(menuBar);
+
+        run.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, KeyEvent.META_DOWN_MASK));
+        run.addActionListener((e) -> this.console.run(new com.florianwoelki.flow.lang.Class(this.text.getText().split("\n"))));
+
+        save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.META_DOWN_MASK));
         save.addActionListener((event) ->
         {
             JFileChooser chooser = new JFileChooser();
@@ -50,7 +80,7 @@ public class IDE extends JFrame
             }
         });
 
-        JButton load = new JButton("Load");
+        load.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, KeyEvent.META_DOWN_MASK));
         load.addActionListener((event) ->
         {
             JFileChooser chooser = new JFileChooser();
@@ -79,19 +109,6 @@ public class IDE extends JFrame
                 }
             }
         });
-
-        JScrollPane scroll = new JScrollPane(this.text);
-        scroll.setBorder(null);
-        scroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-
-        JPanel toolBar = new JPanel();
-        toolBar.setMaximumSize(new Dimension(640, 30));
-        toolBar.add(run);
-        toolBar.add(save);
-        toolBar.add(load);
-
-        this.add(toolBar);
-        this.add(scroll);
 
         this.setSize(640, 480);
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
