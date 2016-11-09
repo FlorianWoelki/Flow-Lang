@@ -58,6 +58,8 @@ public class Class extends Block
             }
         }
 
+        console.clear();
+
         this.getMethod("main").run();
 
         console.write("--Terminated.");

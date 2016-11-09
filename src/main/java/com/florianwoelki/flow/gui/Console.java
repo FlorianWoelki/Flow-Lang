@@ -83,6 +83,15 @@ public class Console extends JTextPane
         return localResult;
     }
 
+    public void clear()
+    {
+        SwingUtilities.invokeLater(() ->
+        {
+            this.setText("");
+            this.setCaret();
+        });
+    }
+
     public void write(String text)
     {
         SwingUtilities.invokeLater(() ->
