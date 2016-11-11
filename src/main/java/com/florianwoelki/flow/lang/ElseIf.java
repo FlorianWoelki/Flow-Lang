@@ -3,26 +3,17 @@ package com.florianwoelki.flow.lang;
 import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * Created by Florian Woelki on 08.11.16.
+ * Created by Florian Woelki on 11.11.16.
  */
-public class If extends ConditionalBlock
+public class ElseIf extends ConditionalBlock
 {
-    private final List<ElseIf> elseIfs;
-    private Else elze;
-
-    public If(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
+    public ElseIf(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
     {
         super(superBlock, aVal, bVal, compareOp);
-
-        this.elseIfs = new ArrayList<>();
     }
 
-    @Override
-    public void runAfterParse() throws InvalidCodeException
+    public boolean runElseIf() throws InvalidCodeException
     {
         boolean opSuccess = false;
 
@@ -83,35 +74,12 @@ public class If extends ConditionalBlock
             }
         }
 
-        if (!opSuccess)
-        {
-            boolean elseIfRan = false;
-
-            for (ElseIf elseIf : this.elseIfs)
-            {
-                elseIf.run();
-                if (elseIf.runElseIf())
-                {
-                    elseIfRan = true;
-                    break;
-                }
-            }
-
-            if (!elseIfRan && this.elze != null)
-            {
-                this.elze.run();
-                this.elze.doBlocks();
-            }
-        }
+        return opSuccess;
     }
 
-    public void addElseIf(ElseIf elseIf)
+    @Override
+    public void runAfterParse() throws InvalidCodeException
     {
-        this.elseIfs.add(elseIf);
-    }
 
-    public void setElse(Else elze)
-    {
-        this.elze = elze;
     }
 }

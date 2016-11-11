@@ -1,0 +1,11 @@
+method main
+	if equals 5 6
+		print state0
+	end
+	elseif equals 5 7
+		print state1
+	end
+	else
+		print state2
+	end
+end main

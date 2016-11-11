@@ -1,8 +1,0 @@
-method main
-    if equals 5 5
-        print Working
-    end
-    else
-        print Not Working
-    end
-end main

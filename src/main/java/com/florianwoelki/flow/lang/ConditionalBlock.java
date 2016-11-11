@@ -11,6 +11,7 @@ public abstract class ConditionalBlock extends Block
     {
         IF,
         ELSE,
+        ELSEIF,
         WHILE;
     }
 
