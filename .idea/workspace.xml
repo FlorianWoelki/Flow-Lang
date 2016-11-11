@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fbcacb-8126-45fe-8865-b1d9c1288c21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/FunctionManager.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/FunctionManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/GetInput.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/GetInput.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/Var.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/function/Var.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable$VariableType.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable$VariableType.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Var.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Var.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/examples/Variables.flow" afterPath="$PROJECT_DIR$/src/main/resources/examples/Variables.flow" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/grammar/grammar.txt" afterPath="$PROJECT_DIR$/src/main/resources/grammar/grammar.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/grammar/grammar.txt" afterPath="$PROJECT_DIR$/target/classes/grammar/grammar.txt" />
     </list>
     <ignored path="Flow-Lang.iws" />
@@ -37,7 +32,18 @@
     <favorites_list name="Flow-Lang" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,8 +92,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/examples/IfElseIfElse.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/WhileLoop.flow" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/RunMethod.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" />
@@ -96,6 +100,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/grammar/grammar.txt" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/Variables.flow" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -917,7 +923,7 @@
       <workItem from="1478872726614" duration="76000" />
       <workItem from="1478884502740" duration="3875000" />
       <workItem from="1478902533691" duration="270000" />
-      <workItem from="1478902835788" duration="1224000" />
+      <workItem from="1478902835788" duration="1268000" />
     </task>
     <task id="LOCAL-00001" summary="Added InvalidCodeException">
       <created>1478616629986</created>
@@ -1171,15 +1177,22 @@
       <option name="project" value="LOCAL" />
       <updated>1478903138018</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Added set vor variables,&#10;Updated grammar, examples">
+      <created>1478904122626</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1478904122626</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23554000" />
+    <option name="totallyTimeSpent" value="23598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1021" y="122" width="1363" height="931" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1193,7 +1206,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1220,7 +1233,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated If, it can be used now,&#10;Updated FlowLang" />
     <MESSAGE value="Updated While, it can be used now," />
     <MESSAGE value="Updated Block,&#10;Updated ConditionalBlock" />
     <MESSAGE value="Updated Class" />
@@ -1245,7 +1257,8 @@
     <MESSAGE value="Updated grammar" />
     <MESSAGE value="Updated workspace" />
     <MESSAGE value="Updated version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version" />
+    <MESSAGE value="Added set vor variables,&#10;Updated grammar, examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added set vor variables,&#10;Updated grammar, examples" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1550,22 +1563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="12" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -1669,6 +1666,22 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
