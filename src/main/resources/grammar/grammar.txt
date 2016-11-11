@@ -7,6 +7,9 @@ A primitive type: string, integer, boolean, etc.
 <value>:
 Either an identifier (for a variable) or a literal (1, "Hello", true)
 
+<condition>:
+Either equals, notequals, greaterthan, lessthan
+
 Class Declaration:
 `class <identifier>`
 
@@ -18,3 +21,9 @@ Variable Declaration:
 
 Print Statement:
 `print <value>`
+
+If/Else Statement:
+`if <condition> <variable a> <variable b> ... end`
+
+While Loop:
+`while <condition> <variable a> <variable b> ... end`
