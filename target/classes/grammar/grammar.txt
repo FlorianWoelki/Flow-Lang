@@ -29,7 +29,9 @@ Run Method:
 `run <method name>`
 
 If/Else Statement:
-`if <condition> <variable a> <variable b> ... end`
+`if <condition> <variable a> <variable b> ... end
+ elseif <condition> <variable a> <variable b> ... end
+ else ... end`
 
 While Loop:
 `while <condition> <variable a> <variable b> ... end`
