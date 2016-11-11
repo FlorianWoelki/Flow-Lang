@@ -6,7 +6,7 @@
 
     <groupId>com.florianwoelki.flow</groupId>
     <artifactId>Flow-Lang</artifactId>
-    <version>0.4.4</version>
+    <version>0.5.5</version>
 
     <build>
         <plugins>
@@ -20,6 +20,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
