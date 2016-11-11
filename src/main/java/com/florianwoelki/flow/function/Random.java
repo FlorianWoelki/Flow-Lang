@@ -1,4 +1,4 @@
-package com.florianwoelki.flow.command;
+package com.florianwoelki.flow.function;
 
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
@@ -8,7 +8,7 @@ import com.florianwoelki.flow.lang.Variable;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Random extends Command
+public class Random extends Function
 {
     private java.util.Random random;
 

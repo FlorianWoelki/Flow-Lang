@@ -10,6 +10,7 @@ public abstract class ConditionalBlock extends Block
     enum ConditionalBlockType
     {
         IF,
+        ELSE,
         WHILE;
     }
 

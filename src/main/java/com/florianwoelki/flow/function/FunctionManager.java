@@ -1,4 +1,4 @@
-package com.florianwoelki.flow.command;
+package com.florianwoelki.flow.function;
 
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
@@ -11,20 +11,20 @@ import java.util.List;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class CommandManager
+public class FunctionManager
 {
-    private final List<Command> commands = new ArrayList<>();
+    private final List<Function> functions = new ArrayList<>();
 
     private final Console console;
 
-    public CommandManager(Console console)
+    public FunctionManager(Console console)
     {
         this.console = console;
 
-        this.commands.add(new Print());
-        this.commands.add(new Var());
-        this.commands.add(new Random());
-        this.commands.add(new GetInput());
+        this.functions.add(new Print());
+        this.functions.add(new Var());
+        this.functions.add(new Random());
+        this.functions.add(new GetInput());
     }
 
     public void parse(Block block, String input) throws InvalidCodeException
@@ -33,23 +33,23 @@ public class CommandManager
         String cmd = all[0];
         String[] args = Arrays.copyOfRange(all, 1, all.length);
 
-        Command command = null;
+        Function function = null;
 
-        for (Command cm : this.commands)
+        for (Function f : this.functions)
         {
-            if (cm.getName().equals(cmd))
+            if (f.getName().equals(cmd))
             {
-                command = cm;
+                function = f;
             }
         }
 
-        if (command == null)
+        if (function == null)
         {
             throw new InvalidCodeException("Function " + cmd + " does not exist.");
         }
         else
         {
-            command.run(this.console, block, args);
+            function.run(this.console, block, args);
         }
     }
 }

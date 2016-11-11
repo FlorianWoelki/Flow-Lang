@@ -1,4 +1,4 @@
-package com.florianwoelki.flow.command;
+package com.florianwoelki.flow.function;
 
 import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
@@ -11,7 +11,7 @@ import java.util.Arrays;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Var extends Command
+public class Var extends Function
 {
     public Var()
     {

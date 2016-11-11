@@ -1,4 +1,4 @@
-package com.florianwoelki.flow.command;
+package com.florianwoelki.flow.function;
 
 import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
@@ -8,7 +8,7 @@ import com.florianwoelki.flow.lang.Block;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Print extends Command
+public class Print extends Function
 {
     public Print()
     {

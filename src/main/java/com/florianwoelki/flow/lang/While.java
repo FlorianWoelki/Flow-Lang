@@ -18,17 +18,43 @@ public class While extends ConditionalBlock
     {
         if (this.compareOp == CompareOperation.EQUALS)
         {
-            while (FlowLang.implode(new String[]{this.aVal}, this).equals(FlowLang.implode(new String[]{this.bVal}, this)))
+            int a, b;
+
+            do
             {
+                try
+                {
+                    a = Integer.parseInt(FlowLang.implode(new String[]{this.aVal}, this));
+                    b = Integer.parseInt(FlowLang.implode(new String[]{this.bVal}, this));
+                }
+                catch (Exception e)
+                {
+                    throw new InvalidCodeException("Attempted to use " + this.compareOp.name().toLowerCase() + " on non-integers");
+                }
+
                 this.doBlocks();
             }
+            while (a == b);
         }
         else if (this.compareOp == CompareOperation.NOTEEQUALS)
         {
-            while (!FlowLang.implode(new String[]{this.aVal}, this).equals(FlowLang.implode(new String[]{this.bVal}, this)))
+            int a, b;
+
+            do
             {
+                try
+                {
+                    a = Integer.parseInt(FlowLang.implode(new String[]{this.aVal}, this));
+                    b = Integer.parseInt(FlowLang.implode(new String[]{this.bVal}, this));
+                }
+                catch (Exception e)
+                {
+                    throw new InvalidCodeException("Attempted to use " + this.compareOp.name().toLowerCase() + " on non-integers");
+                }
+
                 this.doBlocks();
             }
+            while (a != b);
         }
         else if (this.compareOp == CompareOperation.GREATERTHAN)
         {

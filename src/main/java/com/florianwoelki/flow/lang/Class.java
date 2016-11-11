@@ -1,6 +1,6 @@
 package com.florianwoelki.flow.lang;
 
-import com.florianwoelki.flow.command.CommandManager;
+import com.florianwoelki.flow.function.FunctionManager;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class Class extends Block
 {
     private List<Method> methods;
-    public CommandManager commandManager;
+    public FunctionManager functionManager;
 
     private final String[] code;
 
@@ -27,7 +27,7 @@ public class Class extends Block
     public void run(Console console) throws InvalidCodeException
     {
         this.methods = new ArrayList<>();
-        this.commandManager = new CommandManager(console);
+        this.functionManager = new FunctionManager(console);
 
         Method currentMethod = null;
 
@@ -47,7 +47,7 @@ public class Class extends Block
             }
             else if (line.startsWith("var"))
             {
-                this.commandManager.parse(this, line);
+                this.functionManager.parse(this, line);
             }
             else
             {

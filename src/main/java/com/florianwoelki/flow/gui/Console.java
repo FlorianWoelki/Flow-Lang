@@ -53,7 +53,7 @@ public class Console extends JTextPane
             }
             catch (InvalidCodeException e)
             {
-                e.printStackTrace();
+                Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
             }
         }).start();
     }

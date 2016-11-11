@@ -8,6 +8,8 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
  */
 public class If extends ConditionalBlock
 {
+    private Else elze;
+
     public If(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
     {
         super(superBlock, aVal, bVal, compareOp);
@@ -16,11 +18,14 @@ public class If extends ConditionalBlock
     @Override
     public void runAfterParse() throws InvalidCodeException
     {
+        boolean opSuccess = false;
+
         if (this.compareOp == CompareOperation.EQUALS)
         {
             if (FlowLang.implode(new String[]{this.aVal}, this).equals(FlowLang.implode(new String[]{this.bVal}, this)))
             {
                 this.doBlocks();
+                opSuccess = true;
             }
         }
         else if (this.compareOp == CompareOperation.NOTEEQUALS)
@@ -28,6 +33,7 @@ public class If extends ConditionalBlock
             if (!FlowLang.implode(new String[]{this.aVal}, this).equals(FlowLang.implode(new String[]{this.bVal}, this)))
             {
                 this.doBlocks();
+                opSuccess = true;
             }
         }
         else if (this.compareOp == CompareOperation.GREATERTHAN)
@@ -47,6 +53,7 @@ public class If extends ConditionalBlock
             if (a > b)
             {
                 this.doBlocks();
+                opSuccess = true;
             }
         }
         else if (this.compareOp == CompareOperation.LESSTHAN)
@@ -66,7 +73,18 @@ public class If extends ConditionalBlock
             if (a < b)
             {
                 this.doBlocks();
+                opSuccess = true;
             }
         }
+
+        if (!opSuccess && this.elze != null) {
+            this.elze.run();
+            this.elze.doBlocks();
+        }
+    }
+
+    public void setElse(Else elze)
+    {
+        this.elze = elze;
     }
 }

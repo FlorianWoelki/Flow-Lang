@@ -14,7 +14,7 @@ public abstract class Block
 {
     private final Block superBlock;
     private final List<Variable> vars;
-    final List<Block> subBlocks;
+    private final List<Block> subBlocks;
     private final List<String> lines;
 
     public Block(Block superBlock)
@@ -97,16 +97,21 @@ public abstract class Block
 
     public void run() throws InvalidCodeException
     {
+        this.subBlocks.clear();
+
+        If lastIf = null;
+
         Block currentBlock = null;
+        int numEndsIgnore = 0;
 
         lineLoop:
         for (String line : this.lines)
         {
-            if (currentBlock == null)
+            for (ConditionalBlock.ConditionalBlockType bt : ConditionalBlock.ConditionalBlockType.values())
             {
-                for (ConditionalBlock.ConditionalBlockType bt : ConditionalBlock.ConditionalBlockType.values())
+                if (line.startsWith(bt.name().toLowerCase()))
                 {
-                    if (line.startsWith(bt.name().toLowerCase()))
+                    if (currentBlock == null)
                     {
                         String[] args = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
 
@@ -114,22 +119,54 @@ public abstract class Block
                         {
                             currentBlock = new If(this, args[1], args[2], ConditionalBlock.CompareOperation.match(args[0]));
                         }
+                        else if (bt == ConditionalBlock.ConditionalBlockType.ELSE)
+                        {
+                            if (lastIf == null) throw new InvalidCodeException("Else without if.");
+
+                            currentBlock = new Else(this);
+                        }
                         else if (bt == ConditionalBlock.ConditionalBlockType.WHILE)
                         {
                             currentBlock = new While(this, args[1], args[2], ConditionalBlock.CompareOperation.match(args[0]));
                         }
-
-                        continue lineLoop;
                     }
+                    else
+                    {
+                        currentBlock.addLine(line);
+                        numEndsIgnore++;
+                    }
+
+                    continue lineLoop;
                 }
             }
 
             if (line.equals("end"))
             {
+                if (numEndsIgnore > 0)
+                {
+                    numEndsIgnore--;
+                    currentBlock.addLine("end");
+                    continue;
+                }
+
                 if (currentBlock != null)
                 {
                     currentBlock.addLine("end");
-                    this.subBlocks.add(currentBlock);
+                    if (!(currentBlock instanceof Else))
+                    {
+                        this.subBlocks.add(currentBlock);
+                    }
+
+                    if (currentBlock instanceof If)
+                    {
+                        lastIf = (If) currentBlock;
+                    }
+                    else if (currentBlock instanceof Else)
+                    {
+                        lastIf.setElse((Else) currentBlock);
+                        lastIf = null;
+                    }
+
                     currentBlock = null;
                 }
                 else
