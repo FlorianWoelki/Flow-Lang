@@ -1,5 +1,5 @@
 method main
-    while equals 5 5
-        print Working
+    while equals "5" "5"
+        print "Working"
     end
 end main

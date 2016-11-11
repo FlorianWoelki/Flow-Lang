@@ -1,5 +1,5 @@
 method printHelloWorld
-	print Hello World
+	print "Hello World"
 end printHelloWorld
 
 method main

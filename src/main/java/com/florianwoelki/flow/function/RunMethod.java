@@ -17,7 +17,6 @@ public class RunMethod extends Function
     @Override
     public void run(Console console, Block block, String[] args) throws InvalidCodeException
     {
-        System.out.println(((com.florianwoelki.flow.lang.Class) block.getBlockTree()[0]).getMethod(args[0]).getName());
         ((com.florianwoelki.flow.lang.Class) block.getBlockTree()[0]).getMethod(args[0]).run();
     }
 }

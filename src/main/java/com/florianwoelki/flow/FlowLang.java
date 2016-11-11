@@ -26,18 +26,40 @@ public class FlowLang
     {
         StringBuilder builder = new StringBuilder();
 
+        boolean inQuotes = false;
+
         for (String str : strs)
         {
-            if (str.startsWith("_") && block != null && block.getVariable(str.substring(1)) != null)
+            if (str.startsWith("\""))
             {
-                builder.append(block.getVariable(str.substring(1)).getValue());
+                inQuotes = true;
+            }
+
+            if (inQuotes)
+            {
+                builder.append(str.replaceAll("\"", ""));
             }
             else
             {
-                builder.append(str);
+                if (block != null)
+                {
+                    if (block.getVariable(str) != null)
+                    {
+                        builder.append(block.getVariable(str).getValue());
+                    }
+                    else
+                    {
+                        throw new InvalidCodeException("Variable " + str + " is not defined.");
+                    }
+                }
             }
 
             builder.append(" ");
+
+            if (str.endsWith("\""))
+            {
+                inQuotes = false;
+            }
         }
 
         return builder.toString().trim();

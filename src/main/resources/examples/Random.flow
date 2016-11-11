@@ -2,5 +2,5 @@ method main
     var integer x = 0
     random x 20
 
-    print Value _x
+    print "Value of x is" x
 end main
