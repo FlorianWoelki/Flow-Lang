@@ -25,6 +25,9 @@ Print Statement:
 Get input:
 `getinput <variable>`
 
+Run Method:
+`run <method name>`
+
 If/Else Statement:
 `if <condition> <variable a> <variable b> ... end`
 
