@@ -1,5 +1,6 @@
 package com.florianwoelki.flow.lang;
 
+import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 
 import java.lang.reflect.InvocationTargetException;
@@ -22,15 +23,19 @@ public class Variable
             this.clazz = clazz;
         }
 
-        public void validateValue(Object value)
+        public void validateValue(Object value, Block block) throws InvalidCodeException
         {
             try
             {
-                this.clazz.getDeclaredMethod("valueOf", String.class).invoke(null, value);
+                if (this.clazz != null)
+                {
+                    String sValue = FlowLang.implode(new String[]{String.valueOf(value)}, block);
+                    this.clazz.getDeclaredMethod("valueOf", String.class).invoke(null, sValue);
+                }
             }
-            catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e)
+            catch (Exception e)
             {
-                e.printStackTrace();
+                throw new InvalidCodeException("Invalid value for variable type " + this);
             }
         }
 

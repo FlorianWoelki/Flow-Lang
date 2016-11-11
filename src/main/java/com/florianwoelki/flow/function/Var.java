@@ -34,7 +34,7 @@ public class Var extends Function
             }
             else
             {
-                t.validateValue(args[3]);
+                t.validateValue(args[3], block);
                 value = args[3];
             }
         }

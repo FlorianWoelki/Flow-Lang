@@ -19,6 +19,9 @@ Method Declaration:
 Variable Declaration:
 `var <type> <identifier = name> [= <value>]`
 
+Set variable:
+`set <identifier = name> = <value>`
+
 Print Statement:
 `print <value>`
 

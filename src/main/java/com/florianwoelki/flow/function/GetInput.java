@@ -21,7 +21,7 @@ public class GetInput extends Function
         Variable v = block.getVariable(args[0]);
         String input = console.prompt();
 
-        v.getType().validateValue(input);
+        v.getType().validateValue(input, block);
         v.setValue(input);
     }
 }
