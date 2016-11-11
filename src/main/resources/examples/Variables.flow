@@ -6,5 +6,5 @@ method main
     var string strT Hallo Welt
 
     var boolean boolO = true
-    var boolean bool1 false
+    var boolean boolT false
 end main

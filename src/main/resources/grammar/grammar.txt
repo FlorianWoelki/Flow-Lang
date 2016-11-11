@@ -22,6 +22,9 @@ Variable Declaration:
 Print Statement:
 `print <value>`
 
+Get input:
+`getinput <variable>`
+
 If/Else Statement:
 `if <condition> <variable a> <variable b> ... end`
 
