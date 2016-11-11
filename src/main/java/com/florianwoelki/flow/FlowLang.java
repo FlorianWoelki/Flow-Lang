@@ -43,13 +43,40 @@ public class FlowLang
             {
                 if (block != null)
                 {
-                    if (block.getVariable(str) != null)
+                    boolean isVar;
+
+                    try
                     {
-                        builder.append(block.getVariable(str).getValue());
+                        Integer.valueOf(str);
+                        isVar = false;
+                    }
+                    catch (Exception e)
+                    {
+                        isVar = true;
+                    }
+
+                    if (isVar)
+                    {
+                        if (str.equals("true") || str.equals("false") || str.equals("+"))
+                        {
+                            isVar = false;
+                        }
+                    }
+
+                    if (isVar)
+                    {
+                        if (block.getVariable(str) != null)
+                        {
+                            builder.append(block.getVariable(str).getValue());
+                        }
+                        else
+                        {
+                            throw new InvalidCodeException("Variable " + str + " is not defined.");
+                        }
                     }
                     else
                     {
-                        throw new InvalidCodeException("Variable " + str + " is not defined.");
+                        builder.append(str);
                     }
                 }
             }

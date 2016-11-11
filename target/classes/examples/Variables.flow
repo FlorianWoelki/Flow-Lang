@@ -1,0 +1,9 @@
+method main
+    var integer intO = 20
+    var integer intT 20
+
+    var string strO = "Hallo Welt"
+
+    var boolean boolO = true
+    var boolean boolT false
+end main
