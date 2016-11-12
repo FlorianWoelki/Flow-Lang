@@ -32,6 +32,10 @@ public class Var extends Function
             {
                 value = FlowLang.implode(Arrays.copyOfRange(args, 3, args.length), block);
             }
+            else if (t == Variable.VariableType.DECIMAL)
+            {
+                value = args[3];
+            }
             else
             {
                 t.validateValue(args[3], block);

@@ -1,9 +1,12 @@
 method main
     var integer intO = 20
     var integer intT 20
+    set intT = 10
 
-    var string strO = "Hallo Welt"
+    var string strO = "Hello World"
+    set strO = "Peace Out"
 
     var boolean boolO = true
+    set boolO = false
     var boolean boolT false
 end main

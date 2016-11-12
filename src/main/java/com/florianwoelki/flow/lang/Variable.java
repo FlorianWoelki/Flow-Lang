@@ -14,6 +14,7 @@ public class Variable
     {
         BOOLEAN(Boolean.class),
         INTEGER(Integer.class),
+        DECIMAL(Double.class),
         STRING(String.class);
 
         private final java.lang.Class<?> clazz;
