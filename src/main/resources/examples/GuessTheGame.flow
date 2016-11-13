@@ -1,0 +1,21 @@
+method main
+	print "Welcome to Guess The Number"
+	print "Type a guess to continue."
+	var integer x = 0
+	random x 10
+
+	var integer input = -1
+	while notequals x input
+		if notequals x input
+            getinput input
+            if lessthan x input
+                print "Your guess is too high."
+            end
+            elseif greaterthan x input
+                print "Your guess is too low."
+            end
+		end
+	end
+
+	print "You won the game"
+end main

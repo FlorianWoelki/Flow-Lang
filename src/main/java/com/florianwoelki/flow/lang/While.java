@@ -36,7 +36,7 @@ public class While extends ConditionalBlock
             }
             while (a == b);
         }
-        else if (this.compareOp == CompareOperation.NOTEEQUALS)
+        else if (this.compareOp == CompareOperation.NOTEQUALS)
         {
             int a, b;
 

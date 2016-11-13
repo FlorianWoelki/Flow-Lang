@@ -25,7 +25,7 @@ public class ElseIf extends ConditionalBlock
                 opSuccess = true;
             }
         }
-        else if (this.compareOp == CompareOperation.NOTEEQUALS)
+        else if (this.compareOp == CompareOperation.NOTEQUALS)
         {
             if (!FlowLang.implode(new String[]{this.aVal}, this).equals(FlowLang.implode(new String[]{this.bVal}, this)))
             {

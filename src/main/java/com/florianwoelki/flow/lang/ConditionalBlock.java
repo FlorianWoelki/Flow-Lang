@@ -18,7 +18,7 @@ public abstract class ConditionalBlock extends Block
     enum CompareOperation
     {
         EQUALS,
-        NOTEEQUALS,
+        NOTEQUALS,
         GREATERTHAN,
         LESSTHAN;
 
