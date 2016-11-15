@@ -17,7 +17,7 @@ public class Print extends Function
     }
 
     /*
-    Usage: print(<message>)
+    Usage: print("<message>", <variable>, "<message>")
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException
