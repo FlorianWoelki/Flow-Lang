@@ -35,6 +35,11 @@ public class FlowLang
                 inQuotes = true;
             }
 
+            if (!str.contains("\""))
+            {
+                str = str.trim();
+            }
+
             if (inQuotes)
             {
                 builder.append(str.replaceAll("\"", ""));
@@ -53,8 +58,6 @@ public class FlowLang
                     }
                 }
             }
-
-            builder.append(" ");
 
             if (str.endsWith("\""))
             {
