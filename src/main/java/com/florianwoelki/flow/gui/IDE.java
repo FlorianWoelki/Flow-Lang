@@ -14,6 +14,8 @@ public class IDE extends JFrame
     private final Console console;
     private final JTextPane text;
 
+    private final Preferences prefs;
+
     public IDE()
     {
         super("Flow - IDE");
@@ -27,6 +29,8 @@ public class IDE extends JFrame
 
         this.console = new Console();
 
+        this.prefs = new Preferences(this);
+
         JScrollPane consoleScroll = new JScrollPane(this.console);
         consoleScroll.setBorder(null);
         consoleScroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
@@ -39,13 +43,15 @@ public class IDE extends JFrame
 
         JMenuBar menuBar = new JMenuBar();
         JMenu menu = new JMenu("File");
-        JMenuItem run = new JMenuItem("Run"), save = new JMenuItem("Save"), load = new JMenuItem("Load");
+        JMenuItem run = new JMenuItem("Run"), save = new JMenuItem("Save"), load = new JMenuItem("Load"), preferences = new JMenuItem("Preferences");
 
         menuBar.add(menu);
 
         menu.add(run);
         menu.add(save);
         menu.add(load);
+        menu.addSeparator();
+        menu.add(preferences);
 
         this.setJMenuBar(menuBar);
 
@@ -110,11 +116,22 @@ public class IDE extends JFrame
             }
         });
 
+        preferences.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA, KeyEvent.META_DOWN_MASK));
+        preferences.setEnabled(false);
+        preferences.addActionListener((e) ->
+        {
+            JOptionPane.showMessageDialog(IDE.this, prefs, "Preferences", JOptionPane.PLAIN_MESSAGE);
+        });
+
         this.setSize(640, 480);
-        this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
+    }
+
+    public void setIDEFont(Font font)
+    {
+        this.text.setFont(font);
     }
 }

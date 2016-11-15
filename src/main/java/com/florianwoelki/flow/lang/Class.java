@@ -5,6 +5,7 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -37,7 +38,20 @@ public class Class extends Block
 
             if (line.startsWith("method "))
             {
-                currentMethod = new Method(this, line.split(" ")[1]);
+                String[] args = line.split(" ");
+                String[] mArgs = args[1].split(":");
+                String methodName = mArgs[0];
+
+                if (mArgs.length == 1)
+                {
+                    throw new InvalidCodeException("Did not specify return type for method " + methodName + ".");
+                }
+
+                Variable.VariableType returnType = Variable.VariableType.match(mArgs[1]);
+
+                String[] params = Arrays.copyOfRange(args, 2, args.length);
+
+                currentMethod = new Method(this, methodName, returnType, params);
             }
             else if (currentMethod != null && line.equals("end " + currentMethod.getName()))
             {
@@ -45,7 +59,7 @@ public class Class extends Block
 
                 currentMethod = null;
             }
-            else if (line.startsWith("var"))
+            else if (line.startsWith("declare"))
             {
                 this.functionManager.parse(this, line);
             }
@@ -60,7 +74,9 @@ public class Class extends Block
 
         console.clear();
 
-        this.getMethod("main").run();
+        Method main = this.getMethod("main");
+        main.run();
+        main.invoke(new String[0]);
 
         console.write("--Terminated.");
     }

@@ -18,19 +18,18 @@ public class Set extends Function
         super("set");
     }
 
+    /*
+    Usage: set(<value>) <var>
+     */
     @Override
-    public void run(Console console, Block block, String[] args) throws InvalidCodeException
+    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException
     {
-        Variable v = block.getVariable(args[0]);
+        if (receiver == null)
+        {
+            throw new InvalidCodeException("Attempted to set variable but no variable specified.");
+        }
 
-        if (v.getType() != Variable.VariableType.STRING)
-        {
-            v.getType().validateValue(args[2], block);
-            v.setValue(args[2]);
-        }
-        else
-        {
-            v.setValue(FlowLang.implode(Arrays.copyOfRange(args, 2, args.length), block));
-        }
+        receiver.getType().validateValue(args[0], block);
+        receiver.setValue(FlowLang.implode(new String[]{args[0]}, block));
     }
 }

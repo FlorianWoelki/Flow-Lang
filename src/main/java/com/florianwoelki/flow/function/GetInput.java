@@ -15,13 +15,18 @@ public class GetInput extends Function
         super("getinput");
     }
 
+    /*
+    Usage: getinput() <var>
+     */
     @Override
-    public void run(Console console, Block block, String[] args) throws InvalidCodeException
+    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException
     {
-        Variable v = block.getVariable(args[0]);
         String input = console.prompt();
 
-        v.getType().validateValue(input, block);
-        v.setValue(input);
+        if (receiver != null)
+        {
+            receiver.getType().validateValue(input, block);
+            receiver.setValue(input);
+        }
     }
 }

@@ -12,6 +12,8 @@ import java.util.List;
  */
 public abstract class Block
 {
+    private final List<CustomLineHandler> handlers;
+
     private final Block superBlock;
     private final List<Variable> vars;
     private final List<Block> subBlocks;
@@ -19,6 +21,8 @@ public abstract class Block
 
     public Block(Block superBlock)
     {
+        this.handlers = new ArrayList<CustomLineHandler>();
+
         this.superBlock = superBlock;
         this.vars = new ArrayList<>();
         this.subBlocks = new ArrayList<>();
@@ -26,6 +30,11 @@ public abstract class Block
     }
 
     protected abstract void runAfterParse() throws InvalidCodeException;
+
+    public void registerCustomLineHandler(CustomLineHandler h)
+    {
+        this.handlers.add(h);
+    }
 
     public void addLine(String line)
     {
@@ -107,6 +116,19 @@ public abstract class Block
         lineLoop:
         for (String line : this.lines)
         {
+            for (CustomLineHandler h : this.handlers)
+            {
+                if (line.startsWith(h.getStart()))
+                {
+                    if (h.run(line, this))
+                    {
+                        break lineLoop;
+                    }
+
+                    continue lineLoop;
+                }
+            }
+
             for (ConditionalBlock.ConditionalBlockType bt : ConditionalBlock.ConditionalBlockType.values())
             {
                 if (line.split(" ")[0].equals(bt.name().toLowerCase()))
@@ -207,4 +229,21 @@ public abstract class Block
     {
         return this.superBlock;
     }
+}
+
+abstract class CustomLineHandler
+{
+    private final String start;
+
+    public CustomLineHandler(String start)
+    {
+        this.start = start;
+    }
+
+    public String getStart()
+    {
+        return start;
+    }
+
+    public abstract boolean run(String line, Block sB) throws InvalidCodeException;
 }

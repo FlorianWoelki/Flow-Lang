@@ -12,10 +12,11 @@ public class Variable
 {
     public enum VariableType
     {
+        VOID(null),
         BOOLEAN(Boolean.class),
         INTEGER(Integer.class),
         DECIMAL(Double.class),
-        STRING(String.class);
+        STRING(null);
 
         private final java.lang.Class<?> clazz;
 
@@ -44,7 +45,7 @@ public class Variable
         {
             for (VariableType t : values())
             {
-                if (t.name().toLowerCase().equals(str))
+                if (t.name().toLowerCase().equals(str.toLowerCase()))
                 {
                     return t;
                 }
