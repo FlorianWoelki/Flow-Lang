@@ -117,4 +117,10 @@ public class Class extends Block
     protected void runAfterParse() throws InvalidCodeException
     {
     }
+
+    @Override
+    public String toString()
+    {
+        return "Class methods=" + Arrays.toString(this.methods.toArray()) + " code=" + Arrays.toString(this.code);
+    }
 }

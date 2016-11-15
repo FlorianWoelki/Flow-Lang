@@ -16,4 +16,10 @@ public class Else extends Block
     protected void runAfterParse() throws InvalidCodeException
     {
     }
+
+    @Override
+    public String toString()
+    {
+        return "Else";
+    }
 }

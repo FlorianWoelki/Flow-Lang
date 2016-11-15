@@ -55,10 +55,12 @@ public class IDE extends JFrame
 
         this.setJMenuBar(menuBar);
 
-        run.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, KeyEvent.META_DOWN_MASK));
+        int meta = System.getProperty("os.name").startsWith("Mac") ? KeyEvent.META_DOWN_MASK : KeyEvent.CTRL_DOWN_MASK;
+
+        run.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, meta));
         run.addActionListener((e) -> this.console.run(new com.florianwoelki.flow.lang.Class(this.text.getText().split("\n"))));
 
-        save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.META_DOWN_MASK));
+        save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, meta));
         save.addActionListener((event) ->
         {
             JFileChooser chooser = new JFileChooser();
@@ -86,7 +88,7 @@ public class IDE extends JFrame
             }
         });
 
-        load.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, KeyEvent.META_DOWN_MASK));
+        load.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, meta));
         load.addActionListener((event) ->
         {
             JFileChooser chooser = new JFileChooser();
@@ -116,7 +118,7 @@ public class IDE extends JFrame
             }
         });
 
-        preferences.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA, KeyEvent.META_DOWN_MASK));
+        preferences.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA, meta));
         preferences.setEnabled(false);
         preferences.addActionListener((e) ->
         {
@@ -124,7 +126,6 @@ public class IDE extends JFrame
         });
 
         this.setSize(640, 480);
-        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);

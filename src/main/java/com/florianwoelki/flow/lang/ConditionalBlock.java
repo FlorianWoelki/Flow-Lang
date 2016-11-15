@@ -63,4 +63,10 @@ public abstract class ConditionalBlock extends Block
     }
 
     public abstract void runAfterParse() throws InvalidCodeException;
+
+    @Override
+    public String toString()
+    {
+        return "ConditionalBlock type=" + this.getClass().getSimpleName();
+    }
 }

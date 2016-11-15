@@ -235,6 +235,12 @@ public abstract class Block
         this.runAfterParse();
     }
 
+    @Override
+    public String toString()
+    {
+        return "Block type=" + this.getClass().getSimpleName();
+    }
+
     public Block getSuperBlock()
     {
         return this.superBlock;

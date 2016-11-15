@@ -20,4 +20,10 @@ public class Line extends Block
     {
         ((Class) this.getBlockTree()[0]).functionManager.parse(this.getSuperBlock(), this.line);
     }
+
+    @Override
+    public String toString()
+    {
+        return "Line text=" + this.line;
+    }
 }

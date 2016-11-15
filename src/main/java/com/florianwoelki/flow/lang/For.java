@@ -48,4 +48,10 @@ public class For extends Block
             this.doBlocks();
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return "For lower=" + this.lower + " upper=" + this.upper;
+    }
 }

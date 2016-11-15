@@ -97,4 +97,10 @@ public class While extends ConditionalBlock
             while (a < b);
         }
     }
+
+    @Override
+    public String toString()
+    {
+        return "While aVal=" + this.aVal + " bVal=" + this.bVal + " compareOp=" + this.compareOp.name();
+    }
 }

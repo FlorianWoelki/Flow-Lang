@@ -85,4 +85,10 @@ public class Variable
     {
         this.value = String.valueOf(value);
     }
+
+    @Override
+    public String toString()
+    {
+        return "Variable name=" + this.getName() + " type=" + this.getType();
+    }
 }

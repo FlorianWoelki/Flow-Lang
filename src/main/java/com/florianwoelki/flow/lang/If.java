@@ -114,4 +114,10 @@ public class If extends ConditionalBlock
     {
         this.elze = elze;
     }
+
+    @Override
+    public String toString()
+    {
+        return "If aVal=" + this.aVal + " bVal=" + this.bVal + " compareOp=" + this.compareOp.name();
+    }
 }

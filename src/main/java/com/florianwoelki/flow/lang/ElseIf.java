@@ -80,6 +80,11 @@ public class ElseIf extends ConditionalBlock
     @Override
     public void runAfterParse() throws InvalidCodeException
     {
+    }
 
+    @Override
+    public String toString()
+    {
+        return "ElseIf aVal=" + this.aVal + " bVal=" + this.bVal + " compareOp=" + this.compareOp.name();
     }
 }
