@@ -1,5 +1,5 @@
 method main:void
-    while equals 5 5
+    while 5 == 5
         print("Working")
     end
 end main

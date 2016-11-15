@@ -5,13 +5,13 @@ method main:void
 	random(10) x
 
 	declare(integer, input, -1)
-	while notequals x input
-		if notequals x input
+	while x != input
+		if x != input
 			getinput() input
-			if lessthan x input
+			if x < input
 				print("Your guess is too high.")
 			end
-			elseif greaterthan x input
+			elseif x > input
 				print("Your guess is too low.")
 			end
 		end
