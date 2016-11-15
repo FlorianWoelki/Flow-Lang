@@ -1,5 +1,5 @@
 method main:void
 	declare(integer, x, 0)
 	getinput() x
-	print(x)
+	print("Input was ", x)
 end main
