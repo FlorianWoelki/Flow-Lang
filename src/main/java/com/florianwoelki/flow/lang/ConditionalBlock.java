@@ -12,7 +12,8 @@ public abstract class ConditionalBlock extends Block
         IF,
         ELSE,
         ELSEIF,
-        WHILE;
+        WHILE,
+        FOR;
     }
 
     enum CompareOperation

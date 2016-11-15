@@ -1,0 +1,8 @@
+method main:void
+	declare(integer, i, 0)
+	declare(integer, j, 10)
+
+	for i < j
+		print(i)
+	end
+end main

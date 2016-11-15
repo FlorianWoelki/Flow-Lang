@@ -162,6 +162,10 @@ public abstract class Block
                             {
                                 currentBlock = new While(this, a, b, op);
                             }
+                            else if (bt == ConditionalBlock.ConditionalBlockType.FOR)
+                            {
+                                currentBlock = new For(this, a, b);
+                            }
                         }
                     }
                     else
