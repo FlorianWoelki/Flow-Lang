@@ -34,7 +34,16 @@ public class FunctionManager
     {
         String funct = input.substring(0, input.indexOf("(")).trim();
 
-        String[] args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).replaceAll(" ", "").split(",");
+        String[] args;
+
+        if (funct.equals("print"))
+        {
+            args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).split(",");
+        }
+        else
+        {
+            args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).replaceAll(" ", "").split(",");
+        }
 
         Variable receiver = null;
 

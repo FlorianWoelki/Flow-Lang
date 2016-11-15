@@ -1,12 +1,10 @@
-method main
-    var integer intO = 20
-    var integer intT 20
-    set intT = 10
+method main:void
+	declare(integer, intO, 20)
+	set("30") intO
 
-    var string strO = "Hello World"
-    set strO = "Peace Out"
+	declare(string, strO, "Hello")
+	set("World") strO
 
-    var boolean boolO = true
-    set boolO = false
-    var boolean boolT false
+	declare(boolean, boolO, true)
+	set(false) boolO
 end main

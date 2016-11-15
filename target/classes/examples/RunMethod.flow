@@ -1,7 +1,0 @@
-method printHelloWorld
-	print "Hello World"
-end printHelloWorld
-
-method main
-	run printHelloWorld
-end main
