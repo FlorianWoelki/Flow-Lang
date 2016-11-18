@@ -5,10 +5,9 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public abstract class ConditionalBlock extends Block
-{
-    enum ConditionalBlockType
-    {
+public abstract class ConditionalBlock extends Block {
+
+    enum ConditionalBlockType {
         IF,
         ELSE,
         ELSEIF,
@@ -16,36 +15,30 @@ public abstract class ConditionalBlock extends Block
         FOR;
     }
 
-    enum CompareOperation
-    {
-        EQUALS("=="),
-        NOTEQUALS("!="),
-        GREATERTHAN(">"),
-        LESSTHAN("<");
+    enum CompareOperation {
+        EQUALS( "==" ),
+        NOTEQUALS( "!=" ),
+        GREATERTHAN( ">" ),
+        LESSTHAN( "<" );
 
         private final String op;
 
-        CompareOperation(String op)
-        {
+        CompareOperation(String op) {
             this.op = op;
         }
 
-        public String getOp()
-        {
+        public String getOp() {
             return op;
         }
 
-        public static CompareOperation match(String str) throws InvalidCodeException
-        {
-            for (CompareOperation op : values())
-            {
-                if (op.getOp().equals(str))
-                {
+        public static CompareOperation match(String str) throws InvalidCodeException {
+            for ( CompareOperation op : values() ) {
+                if ( op.getOp().equals( str ) ) {
                     return op;
                 }
             }
 
-            throw new InvalidCodeException("Comparison operation " + str + " doesn't exist.");
+            throw new InvalidCodeException( "Comparison operation " + str + " doesn't exist." );
         }
     }
 
@@ -53,9 +46,8 @@ public abstract class ConditionalBlock extends Block
     final String bVal;
     final CompareOperation compareOp;
 
-    ConditionalBlock(Block superBlock, String aVal, String bVal, CompareOperation compareOp)
-    {
-        super(superBlock);
+    ConditionalBlock(Block superBlock, String aVal, String bVal, CompareOperation compareOp) {
+        super( superBlock );
 
         this.aVal = aVal;
         this.bVal = bVal;
@@ -65,8 +57,8 @@ public abstract class ConditionalBlock extends Block
     public abstract void runAfterParse() throws InvalidCodeException;
 
     @Override
-    public String toString()
-    {
-        return "ConditionalBlock type=" + this.getClass().getSimpleName();
+    public String toString() {
+        return "ConditionalBlock type=" + getClass().getSimpleName();
     }
+
 }

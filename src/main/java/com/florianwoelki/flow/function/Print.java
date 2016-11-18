@@ -9,19 +9,18 @@ import com.florianwoelki.flow.lang.Variable;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Print extends Function
-{
-    public Print()
-    {
-        super("print");
+public class Print extends Function {
+
+    public Print() {
+        super( "print" );
     }
 
     /*
     Usage: print("<message>", <variable>, "<message>")
      */
     @Override
-    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException
-    {
-        console.write(FlowLang.implode(args, block));
+    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
+        console.write( FlowLang.implode( args, block ) );
     }
+
 }

@@ -2,8 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85fbcacb-8126-45fe-8865-b1d9c1288c21" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/gui/IDE.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/gui/IDE.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Block.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Block.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Class.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Class.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/ConditionalBlock.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/ConditionalBlock.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Else.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Else.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/ElseIf.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/ElseIf.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/If.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/If.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Line.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Line.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/Variable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/While.class" afterPath="$PROJECT_DIR$/target/classes/com/florianwoelki/flow/lang/While.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/exception/InvalidCodeException.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/exception/InvalidCodeException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/IDE.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/IDE.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java" />
@@ -12,6 +34,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Line.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Line.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Method.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Method.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/While.java" afterPath="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/While.java" />
     </list>
@@ -35,18 +58,7 @@
     <favorites_list name="Flow-Lang" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="IDE.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/IDE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="133" column="35" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,7 +78,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/exception/InvalidCodeException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/SmartScroller.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/command/Command.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/command/Print.java" />
@@ -74,47 +85,48 @@
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/command/Var.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/command/GetInput.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/command/CommandManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/IfElse.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/RunMethod.flow" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/RunMethod.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/SetVar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Math.java" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/GuessTheGame.flow" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Method.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" />
         <option value="$PROJECT_DIR$/src/main/resources/grammar/grammar.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/Variables.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/HelloWorld.flow" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Var.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/GetInput.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/Random.flow" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/WhileLoop.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/IfElseIfElse.flow" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/GuessTheNumber.flow" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/examples/For.flow" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/exception/InvalidCodeException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Else.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ElseIf.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Line.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/While.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Method.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Line.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ElseIf.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/IDE.java" />
       </list>
     </option>
@@ -138,8 +150,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="915" />
-    <option name="y" value="263" />
+    <option name="x" value="742" />
+    <option name="y" value="219" />
     <option name="width" value="1363" />
     <option name="height" value="931" />
   </component>
@@ -168,7 +180,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -301,6 +315,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Block.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Flow-Lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Flow-Lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flow" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="gui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -367,8 +415,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -917,14 +963,8 @@
       <workItem from="1479219570335" duration="4566000" />
       <workItem from="1479224220865" duration="50000" />
       <workItem from="1479226060700" duration="1028000" />
-      <workItem from="1479236165486" duration="1599000" />
-    </task>
-    <task id="LOCAL-00003" summary="Added IDE">
-      <created>1478618090961</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1478618090961</updated>
+      <workItem from="1479236165486" duration="1634000" />
+      <workItem from="1479506117689" duration="781000" />
     </task>
     <task id="LOCAL-00004" summary="Added Console,&#10;Created new Console in IDE">
       <created>1478620435260</created>
@@ -1262,39 +1302,46 @@
       <option name="project" value="LOCAL" />
       <updated>1479236924561</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Added toString method to every class in lang package,&#10;Improved IDE">
+      <created>1479237844111</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1479237844111</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39551000" />
+    <option name="totallyTimeSpent" value="40367000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="915" y="263" width="1363" height="931" extended-state="0" />
-    <editor active="true" />
+    <frame x="742" y="219" width="1363" height="931" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5026495" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32657927" sideWeight="0.49735048" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32657927" sideWeight="0.49735048" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24981076" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39928487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39928487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1311,7 +1358,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Version update" />
     <MESSAGE value="Updated Console, IDE, new GUI" />
     <MESSAGE value="Updated Console, IDE, Removed SmartScroller, new GUI," />
     <MESSAGE value="Updated Class, Console to clear console every time you run the program" />
@@ -1336,7 +1382,8 @@
     <MESSAGE value="Change conditional block syntax,&#10;Updated examples" />
     <MESSAGE value="Updated version" />
     <MESSAGE value="Added For Loop + Example" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added For Loop + Example" />
+    <MESSAGE value="Added toString method to every class in lang package,&#10;Improved IDE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added toString method to every class in lang package,&#10;Improved IDE" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1392,8 +1439,8 @@
         <state relative-caret-position="204">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding>
-            <element signature="e#987#988#0" expanded="true" />
-            <element signature="e#1023#1024#0" expanded="true" />
+            <element signature="e#6128#6129#0" expanded="true" />
+            <element signature="e#6193#6194#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1424,76 +1471,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/RunMethod.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Math.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/examples/GuessTheGame" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1881#1882#0" expanded="false" />
-            <element signature="e#1907#1908#0" expanded="false" />
-            <element signature="e#2618#2619#0" expanded="false" />
-            <element signature="e#2665#2666#0" expanded="false" />
-            <element signature="e#7558#7559#0" expanded="false" />
-            <element signature="e#7628#7629#0" expanded="false" />
-            <element signature="e#11683#11854#0" expanded="false" />
-            <element signature="e#11853#11854#0" expanded="false" />
-            <element signature="e#12149#12150#0" expanded="false" />
-            <element signature="e#12207#12208#0" expanded="false" />
-            <element signature="e#13168#13169#0" expanded="false" />
-            <element signature="e#13217#13218#0" expanded="false" />
-            <element signature="e#13558#13559#0" expanded="false" />
-            <element signature="e#13604#13605#0" expanded="false" />
-            <element signature="e#14651#14652#0" expanded="false" />
-            <element signature="e#14703#14704#0" expanded="false" />
-            <element signature="e#14764#14765#0" expanded="false" />
-            <element signature="e#14797#14798#0" expanded="false" />
-            <element signature="e#14858#14859#0" expanded="false" />
-            <element signature="e#14891#14892#0" expanded="false" />
-            <element signature="e#14953#14954#0" expanded="false" />
-            <element signature="e#14986#14987#0" expanded="false" />
-            <element signature="e#16198#16199#0" expanded="false" />
-            <element signature="e#16248#16249#0" expanded="false" />
-            <element signature="e#16293#16294#0" expanded="false" />
-            <element signature="e#16364#16365#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/grammar/grammar.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/examples/RunMethod.flow" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -1503,47 +1480,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="85" column="16" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Var.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/examples/Variables.flow">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1598,15 +1535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1614,7 +1542,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1622,6 +1549,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/FlowLang.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1629,122 +1563,200 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/exception/InvalidCodeException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
-            <element signature="e#199#200#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#228#229#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="240" column="63" selection-start-line="240" selection-start-column="63" selection-end-line="240" selection-end-column="63" />
-          <folding>
-            <element signature="e#6865#6866#0" expanded="true" />
-            <element signature="e#6935#6936#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="669">
-          <caret line="123" column="108" selection-start-line="123" selection-start-column="108" selection-end-line="123" selection-end-column="108" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="734">
-          <caret line="69" column="74" selection-start-line="69" selection-start-column="74" selection-end-line="69" selection-end-column="74" />
-          <folding>
-            <element signature="e#1460#1461#0" expanded="true" />
-            <element signature="e#1541#1542#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Else.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-          <folding>
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#425#426#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ElseIf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="87" column="105" selection-start-line="87" selection-start-column="105" selection-end-line="87" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="54" column="66" selection-start-line="54" selection-start-column="66" selection-end-line="54" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1274#1275#0" expanded="true" />
-            <element signature="e#1347#1348#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="120" column="101" selection-start-line="120" selection-start-column="101" selection-end-line="120" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Line.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#548#549#0" expanded="true" />
-            <element signature="e#595#596#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Method.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
+        <state relative-caret-position="279">
+          <caret line="31" column="12" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Variable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="782">
+          <caret line="70" column="12" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="12" />
+          <folding>
+            <element signature="e#1977#1978#0" expanded="true" />
+            <element signature="e#2029#2030#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/While.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="103" column="103" selection-start-line="103" selection-start-column="103" selection-end-line="103" selection-end-column="103" />
+        <state relative-caret-position="1071">
+          <caret line="64" column="87" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/If.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="54" column="83" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="83" />
+          <folding>
+            <element signature="e#2933#2934#0" expanded="true" />
+            <element signature="e#3026#3027#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/For.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ElseIf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="46" column="83" selection-start-line="46" selection-start-column="79" selection-end-line="46" selection-end-column="83" />
+          <folding>
+            <element signature="e#2311#2312#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Else.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/ConditionalBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="53" column="12" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="54" column="43" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/lang/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="102" column="42" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="57" selection-start-line="20" selection-start-column="53" selection-end-line="20" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/JFontChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="683" column="0" selection-start-line="683" selection-start-column="0" selection-end-line="683" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="86" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="22" column="86" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Print.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/GetInput.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Function.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="e#570#571#0" expanded="true" />
+            <element signature="e#597#598#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/Declare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="86" selection-start-line="23" selection-start-column="84" selection-end-line="23" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/function/FunctionManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="28" column="12" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/Console.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/florianwoelki/flow/gui/IDE.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="133" column="35" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+        <state relative-caret-position="190">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
           <folding />
         </state>
       </provider>

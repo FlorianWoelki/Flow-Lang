@@ -8,25 +8,23 @@ import com.florianwoelki.flow.lang.Variable;
 /**
  * Created by Florian Woelki on 09.11.16.
  */
-public class GetInput extends Function
-{
-    public GetInput()
-    {
-        super("getinput");
+public class GetInput extends Function {
+
+    public GetInput() {
+        super( "getinput" );
     }
 
     /*
     Usage: getinput() <var>
      */
     @Override
-    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException
-    {
+    public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
         String input = console.prompt();
 
-        if (receiver != null)
-        {
-            receiver.getType().validateValue(input, block);
-            receiver.setValue(input);
+        if ( receiver != null ) {
+            receiver.getType().validateValue( input, block );
+            receiver.setValue( input );
         }
     }
+
 }

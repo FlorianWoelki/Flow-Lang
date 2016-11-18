@@ -9,62 +9,50 @@ import javax.swing.*;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class FlowLang
-{
-    public static void main(String[] args)
-    {
-        Thread.setDefaultUncaughtExceptionHandler((thread, e) ->
+public class FlowLang {
+
+    public static void main(String[] args) {
+        Thread.setDefaultUncaughtExceptionHandler( (thread, e) ->
         {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-        });
+            JOptionPane.showMessageDialog( null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE );
+        } );
 
         new IDE();
     }
 
-    public static String implode(String[] strs, Block block) throws InvalidCodeException
-    {
+    public static String implode(String[] strs, Block block) throws InvalidCodeException {
         StringBuilder builder = new StringBuilder();
 
         boolean inQuotes = false;
 
-        for (String str : strs)
-        {
-            if (str.startsWith("\""))
-            {
+        for ( String str : strs ) {
+            if ( str.startsWith( "\"" ) ) {
                 inQuotes = true;
             }
 
-            if (!str.contains("\""))
-            {
+            if ( !str.contains( "\"" ) ) {
                 str = str.trim();
             }
 
-            if (inQuotes)
-            {
-                builder.append(str.replaceAll("\"", ""));
-            }
-            else
-            {
-                if (block != null)
-                {
-                    try
-                    {
-                        builder.append(block.getVariable(str).getValue());
-                    }
-                    catch (InvalidCodeException e)
-                    {
-                        builder.append(str);
+            if ( inQuotes ) {
+                builder.append( str.replaceAll( "\"", "" ) );
+            } else {
+                if ( block != null ) {
+                    try {
+                        builder.append( block.getVariable( str ).getValue() );
+                    } catch ( InvalidCodeException e ) {
+                        builder.append( str );
                     }
                 }
             }
 
-            if (str.endsWith("\""))
-            {
+            if ( str.endsWith( "\"" ) ) {
                 inQuotes = false;
             }
         }
 
         return builder.toString().trim();
     }
+
 }

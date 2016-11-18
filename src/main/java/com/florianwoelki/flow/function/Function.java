@@ -8,19 +8,18 @@ import com.florianwoelki.flow.lang.Variable;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public abstract class Function
-{
+public abstract class Function {
+
     private final String name;
 
-    public Function(String name)
-    {
+    public Function(String name) {
         this.name = name;
     }
 
     public abstract void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException;
 
-    public String getName()
-    {
-        return this.name;
+    public String getName() {
+        return name;
     }
+
 }
