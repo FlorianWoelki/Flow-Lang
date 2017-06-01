@@ -111,7 +111,7 @@ public class IDE extends JFrame {
         });
 
         preferences.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_COMMA, meta));
-        preferences.setEnabled(false);
+        preferences.setEnabled(true);
         preferences.addActionListener((e) ->
         {
             JOptionPane.showMessageDialog(IDE.this, prefs, "Preferences", JOptionPane.PLAIN_MESSAGE);
