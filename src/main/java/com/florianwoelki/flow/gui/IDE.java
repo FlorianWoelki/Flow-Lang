@@ -11,6 +11,9 @@ import java.io.*;
  */
 public class IDE extends JFrame {
 
+    public static final int WIDTH = 1280;
+    public static final int HEIGHT = 720;
+
     private final Console console;
     private final JTextPane text;
 
@@ -36,7 +39,7 @@ public class IDE extends JFrame {
 
         JSplitPane split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, scroll, consoleScroll);
         split.setOneTouchExpandable(true);
-        split.setDividerLocation(320);
+        split.setDividerLocation(860);
 
         add(split);
 
@@ -114,7 +117,7 @@ public class IDE extends JFrame {
             JOptionPane.showMessageDialog(IDE.this, prefs, "Preferences", JOptionPane.PLAIN_MESSAGE);
         });
 
-        setSize(640, 480);
+        setSize(WIDTH, HEIGHT);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
