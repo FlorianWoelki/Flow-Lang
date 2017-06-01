@@ -1,6 +1,0 @@
-method main:void
-	declare(integer, x, 0)
-	random(20) x
-
-	print("Random number: ", x)
-end main

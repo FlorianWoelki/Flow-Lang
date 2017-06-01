@@ -1,3 +1,0 @@
-method main:void
-    print("Hello World")
-end main
