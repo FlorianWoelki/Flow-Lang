@@ -11,7 +11,7 @@ import com.florianwoelki.flow.lang.Variable;
 public class GetInput extends Function {
 
     public GetInput() {
-        super( "getinput" );
+        super("getinput");
     }
 
     /*
@@ -21,9 +21,9 @@ public class GetInput extends Function {
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
         String input = console.prompt();
 
-        if ( receiver != null ) {
-            receiver.getType().validateValue( input, block );
-            receiver.setValue( input );
+        if(receiver != null) {
+            receiver.getType().validateValue(input, block);
+            receiver.setValue(input);
         }
     }
 

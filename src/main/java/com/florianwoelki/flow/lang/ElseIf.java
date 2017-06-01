@@ -9,47 +9,47 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
 public class ElseIf extends ConditionalBlock {
 
     public ElseIf(Block superBlock, String aVal, String bVal, CompareOperation compareOp) {
-        super( superBlock, aVal, bVal, compareOp );
+        super(superBlock, aVal, bVal, compareOp);
     }
 
     public boolean runElseIf() throws InvalidCodeException {
         boolean opSuccess = false;
 
-        if ( compareOp == CompareOperation.EQUALS ) {
-            if ( FlowLang.implode( new String[] { aVal }, this ).equals( FlowLang.implode( new String[] { bVal }, this ) ) ) {
+        if(compareOp == CompareOperation.EQUALS) {
+            if(FlowLang.implode(new String[]{aVal}, this).equals(FlowLang.implode(new String[]{bVal}, this))) {
                 doBlocks();
                 opSuccess = true;
             }
-        } else if ( compareOp == CompareOperation.NOTEQUALS ) {
-            if ( !FlowLang.implode( new String[] { aVal }, this ).equals( FlowLang.implode( new String[] { bVal }, this ) ) ) {
+        } else if(compareOp == CompareOperation.NOTEQUALS) {
+            if(!FlowLang.implode(new String[]{aVal}, this).equals(FlowLang.implode(new String[]{bVal}, this))) {
                 doBlocks();
                 opSuccess = true;
             }
-        } else if ( compareOp == CompareOperation.GREATERTHAN ) {
+        } else if(compareOp == CompareOperation.GREATERTHAN) {
             int a, b;
 
             try {
-                a = Integer.parseInt( FlowLang.implode( new String[] { aVal }, this ) );
-                b = Integer.parseInt( FlowLang.implode( new String[] { bVal }, this ) );
-            } catch ( Exception e ) {
-                throw new InvalidCodeException( "Attempted to use " + compareOp.name().toLowerCase() + " on non-integers" );
+                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
+                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+            } catch(Exception e) {
+                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
-            if ( a > b ) {
+            if(a > b) {
                 doBlocks();
                 opSuccess = true;
             }
-        } else if ( compareOp == CompareOperation.LESSTHAN ) {
+        } else if(compareOp == CompareOperation.LESSTHAN) {
             int a, b;
 
             try {
-                a = Integer.parseInt( FlowLang.implode( new String[] { aVal }, this ) );
-                b = Integer.parseInt( FlowLang.implode( new String[] { bVal }, this ) );
-            } catch ( Exception e ) {
-                throw new InvalidCodeException( "Attempted to use " + compareOp.name().toLowerCase() + " on non-integers" );
+                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
+                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+            } catch(Exception e) {
+                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
-            if ( a < b ) {
+            if(a < b) {
                 doBlocks();
                 opSuccess = true;
             }

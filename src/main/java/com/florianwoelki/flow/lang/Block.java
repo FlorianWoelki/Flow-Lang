@@ -31,15 +31,15 @@ public abstract class Block {
     protected abstract void runAfterParse() throws InvalidCodeException;
 
     public void registerCustomLineHandler(CustomLineHandler h) {
-        handlers.add( h );
+        handlers.add(h);
     }
 
     public void addLine(String line) {
-        lines.add( line );
+        lines.add(line);
     }
 
     public final void doBlocks() throws InvalidCodeException {
-        for ( Block block : subBlocks ) {
+        for(Block block : subBlocks) {
             block.run();
         }
     }
@@ -49,39 +49,39 @@ public abstract class Block {
 
         Block b = this;
 
-        while ( b != null ) {
-            tree.add( b );
+        while(b != null) {
+            tree.add(b);
             b = b.getSuperBlock();
         }
 
-        Collections.reverse( tree );
+        Collections.reverse(tree);
 
-        return tree.toArray( new Block[ tree.size() ] );
+        return tree.toArray(new Block[tree.size()]);
     }
 
     public void addVariable(Variable.VariableType t, String name, Object value) {
-        vars.add( new Variable( t, name, value ) );
+        vars.add(new Variable(t, name, value));
     }
 
     public Variable getVariable(String name) throws InvalidCodeException {
-        for ( Block b : Arrays.copyOfRange( getBlockTree(), 0, getBlockTree().length - 1 ) ) {
-            if ( b.hasVariable( name ) ) {
-                return b.getVariable( name );
+        for(Block b : Arrays.copyOfRange(getBlockTree(), 0, getBlockTree().length - 1)) {
+            if(b.hasVariable(name)) {
+                return b.getVariable(name);
             }
         }
 
-        for ( Variable v : vars ) {
-            if ( v.getName().equals( name ) ) {
+        for(Variable v : vars) {
+            if(v.getName().equals(name)) {
                 return v;
             }
         }
 
-        throw new InvalidCodeException( "Variable " + name + " is not declared." );
+        throw new InvalidCodeException("Variable " + name + " is not declared.");
     }
 
     public boolean hasVariable(String name) {
-        for ( Variable v : vars ) {
-            if ( v.getName().equals( name ) ) {
+        for(Variable v : vars) {
+            if(v.getName().equals(name)) {
                 return true;
             }
         }
@@ -97,10 +97,10 @@ public abstract class Block {
         int numEndsIgnore = 0;
 
         lineLoop:
-        for ( String line : lines ) {
-            for ( CustomLineHandler h : handlers ) {
-                if ( line.startsWith( h.getStart() ) ) {
-                    if ( h.run( line, this ) ) {
+        for(String line : lines) {
+            for(CustomLineHandler h : handlers) {
+                if(line.startsWith(h.getStart())) {
+                    if(h.run(line, this)) {
                         break lineLoop;
                     }
 
@@ -108,33 +108,33 @@ public abstract class Block {
                 }
             }
 
-            for ( ConditionalBlock.ConditionalBlockType bt : ConditionalBlock.ConditionalBlockType.values() ) {
-                if ( line.split( " " )[ 0 ].equals( bt.name().toLowerCase() ) ) {
-                    if ( currentBlock == null ) {
-                        String[] args = Arrays.copyOfRange( line.split( " " ), 1, line.split( " " ).length );
+            for(ConditionalBlock.ConditionalBlockType bt : ConditionalBlock.ConditionalBlockType.values()) {
+                if(line.split(" ")[0].equals(bt.name().toLowerCase())) {
+                    if(currentBlock == null) {
+                        String[] args = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
 
-                        if ( bt == ConditionalBlock.ConditionalBlockType.ELSE ) {
-                            if ( lastIf == null ) throw new InvalidCodeException( "Else if without if." );
+                        if(bt == ConditionalBlock.ConditionalBlockType.ELSE) {
+                            if(lastIf == null) throw new InvalidCodeException("Else if without if.");
 
-                            currentBlock = new Else( this );
+                            currentBlock = new Else(this);
                         } else {
-                            String a = args[ 0 ], b = args[ 2 ];
-                            ConditionalBlock.CompareOperation op = ConditionalBlock.CompareOperation.match( args[ 1 ] );
+                            String a = args[0], b = args[2];
+                            ConditionalBlock.CompareOperation op = ConditionalBlock.CompareOperation.match(args[1]);
 
-                            if ( bt == ConditionalBlock.ConditionalBlockType.IF ) {
-                                currentBlock = new If( this, a, b, op );
-                            } else if ( bt == ConditionalBlock.ConditionalBlockType.ELSEIF ) {
-                                if ( lastIf == null ) throw new InvalidCodeException( "Else if without if." );
+                            if(bt == ConditionalBlock.ConditionalBlockType.IF) {
+                                currentBlock = new If(this, a, b, op);
+                            } else if(bt == ConditionalBlock.ConditionalBlockType.ELSEIF) {
+                                if(lastIf == null) throw new InvalidCodeException("Else if without if.");
 
-                                currentBlock = new ElseIf( this, a, b, op );
-                            } else if ( bt == ConditionalBlock.ConditionalBlockType.WHILE ) {
-                                currentBlock = new While( this, a, b, op );
-                            } else if ( bt == ConditionalBlock.ConditionalBlockType.FOR ) {
-                                currentBlock = new For( this, a, b );
+                                currentBlock = new ElseIf(this, a, b, op);
+                            } else if(bt == ConditionalBlock.ConditionalBlockType.WHILE) {
+                                currentBlock = new While(this, a, b, op);
+                            } else if(bt == ConditionalBlock.ConditionalBlockType.FOR) {
+                                currentBlock = new For(this, a, b);
                             }
                         }
                     } else {
-                        currentBlock.addLine( line );
+                        currentBlock.addLine(line);
                         numEndsIgnore++;
                     }
 
@@ -142,27 +142,27 @@ public abstract class Block {
                 }
             }
 
-            if ( line.equals( "end" ) ) {
-                if ( numEndsIgnore > 0 ) {
+            if(line.equals("end")) {
+                if(numEndsIgnore > 0) {
                     numEndsIgnore--;
-                    if ( currentBlock != null ) {
-                        currentBlock.addLine( "end" );
+                    if(currentBlock != null) {
+                        currentBlock.addLine("end");
                     }
                     continue;
                 }
 
-                if ( currentBlock != null ) {
-                    currentBlock.addLine( "end" );
-                    if ( !(currentBlock instanceof Else) ) {
-                        subBlocks.add( currentBlock );
+                if(currentBlock != null) {
+                    currentBlock.addLine("end");
+                    if(!(currentBlock instanceof Else)) {
+                        subBlocks.add(currentBlock);
                     }
 
-                    if ( currentBlock instanceof If ) {
+                    if(currentBlock instanceof If) {
                         lastIf = (If) currentBlock;
-                    } else if ( currentBlock instanceof ElseIf ) {
-                        lastIf.addElseIf( (ElseIf) currentBlock );
-                    } else if ( currentBlock instanceof Else ) {
-                        lastIf.setElse( (Else) currentBlock );
+                    } else if(currentBlock instanceof ElseIf) {
+                        lastIf.addElseIf((ElseIf) currentBlock);
+                    } else if(currentBlock instanceof Else) {
+                        lastIf.setElse((Else) currentBlock);
                         lastIf = null;
                     }
 
@@ -171,10 +171,10 @@ public abstract class Block {
                     break;
                 }
             } else {
-                if ( currentBlock != null ) {
-                    currentBlock.addLine( line );
+                if(currentBlock != null) {
+                    currentBlock.addLine(line);
                 } else {
-                    subBlocks.add( new Line( this, line ) );
+                    subBlocks.add(new Line(this, line));
                 }
             }
         }

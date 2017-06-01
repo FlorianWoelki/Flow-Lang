@@ -8,7 +8,7 @@ import com.florianwoelki.flow.exception.InvalidCodeException;
 public class Else extends Block {
 
     public Else(Block superBlock) {
-        super( superBlock );
+        super(superBlock);
     }
 
     @Override

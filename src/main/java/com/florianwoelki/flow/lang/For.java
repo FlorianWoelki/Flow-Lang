@@ -11,7 +11,7 @@ public class For extends Block {
     private final String lower, upper;
 
     public For(Block superBlock, String lower, String upper) {
-        super( superBlock );
+        super(superBlock);
 
         this.lower = lower;
         this.upper = upper;
@@ -22,18 +22,18 @@ public class For extends Block {
         double a, b;
 
         try {
-            a = Double.valueOf( FlowLang.implode( new String[] { lower }, this ) );
-            b = Double.valueOf( FlowLang.implode( new String[] { upper }, this ) );
-        } catch ( Exception e ) {
-            throw new InvalidCodeException( "Attempted to use for loop with non-number bounds." );
+            a = Double.valueOf(FlowLang.implode(new String[]{lower}, this));
+            b = Double.valueOf(FlowLang.implode(new String[]{upper}, this));
+        } catch(Exception e) {
+            throw new InvalidCodeException("Attempted to use for loop with non-number bounds.");
         }
 
-        double larger = Math.max( a, b ), smaller = Math.min( a, b );
+        double larger = Math.max(a, b), smaller = Math.min(a, b);
 
-        for ( double i = smaller; i < larger; i++ ) {
+        for(double i = smaller; i < larger; i++) {
             try {
-                getSuperBlock().getVariable( lower ).setValue( i );
-            } catch ( Exception ignored ) {
+                getSuperBlock().getVariable(lower).setValue(i);
+            } catch(Exception ignored) {
             }
 
             doBlocks();

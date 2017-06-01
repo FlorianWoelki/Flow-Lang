@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class Set extends Function {
 
     public Set() {
-        super( "set" );
+        super("set");
     }
 
     /*
@@ -22,12 +22,12 @@ public class Set extends Function {
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
-        if ( receiver == null ) {
-            throw new InvalidCodeException( "Attempted to set variable but no variable specified." );
+        if(receiver == null) {
+            throw new InvalidCodeException("Attempted to set variable but no variable specified.");
         }
 
-        receiver.getType().validateValue( args[ 0 ], block );
-        receiver.setValue( FlowLang.implode( new String[] { args[ 0 ] }, block ) );
+        receiver.getType().validateValue(args[0], block);
+        receiver.setValue(FlowLang.implode(new String[]{args[0]}, block));
     }
 
 }

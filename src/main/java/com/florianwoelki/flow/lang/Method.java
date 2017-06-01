@@ -15,19 +15,19 @@ public class Method extends Block {
     private Object returnValue;
 
     public Method(Block superBlock, String name, Variable.VariableType returnType, String[] params) {
-        super( superBlock );
+        super(superBlock);
 
-        registerCustomLineHandler( new CustomLineHandler( "return" ) {
+        registerCustomLineHandler(new CustomLineHandler("return") {
             public boolean run(String line, Block sB) throws InvalidCodeException {
-                if ( getReturnType() == Variable.VariableType.VOID ) {
+                if(getReturnType() == Variable.VariableType.VOID) {
                     return true;
                 }
 
-                getReturnType().validateValue( line.split( " " )[ 1 ], sB );
-                returnValue = FlowLang.implode( new String[] { line.split( " " )[ 1 ] }, sB );
+                getReturnType().validateValue(line.split(" ")[1], sB);
+                returnValue = FlowLang.implode(new String[]{line.split(" ")[1]}, sB);
                 return true;
             }
-        } );
+        });
 
         this.name = name;
         this.returnType = returnType;
@@ -35,16 +35,16 @@ public class Method extends Block {
     }
 
     public synchronized Object invoke(Object[] invokeParams) throws InvalidCodeException {
-        for ( int i = 0; i < params.length; i++ ) {
-            String[] args = params[ i ].split( ":" );
-            addVariable( Variable.VariableType.match( args[ 0 ] ), args[ 1 ], invokeParams[ i ] );
+        for(int i = 0; i < params.length; i++) {
+            String[] args = params[i].split(":");
+            addVariable(Variable.VariableType.match(args[0]), args[1], invokeParams[i]);
         }
 
         run();
         doBlocks();
 
-        if ( getReturnType() != Variable.VariableType.VOID && returnValue == null ) {
-            throw new InvalidCodeException( "No return for method " + getName() );
+        if(getReturnType() != Variable.VariableType.VOID && returnValue == null) {
+            throw new InvalidCodeException("No return for method " + getName());
         }
 
         Object localReturnValue = returnValue;

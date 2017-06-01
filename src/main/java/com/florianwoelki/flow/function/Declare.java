@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class Declare extends Function {
 
     public Declare() {
-        super( "declare" );
+        super("declare");
     }
 
     /*
@@ -22,24 +22,24 @@ public class Declare extends Function {
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
-        Variable.VariableType t = Variable.VariableType.match( args[ 0 ] );
+        Variable.VariableType t = Variable.VariableType.match(args[0]);
 
-        if ( t == Variable.VariableType.VOID ) {
-            throw new InvalidCodeException( "Attempted to declare void variable." );
+        if(t == Variable.VariableType.VOID) {
+            throw new InvalidCodeException("Attempted to declare void variable.");
         }
 
-        String name = args[ 1 ];
+        String name = args[1];
 
         Object value;
 
-        if ( t == Variable.VariableType.STRING ) {
-            value = FlowLang.implode( new String[] { args[ 2 ] }, block );
+        if(t == Variable.VariableType.STRING) {
+            value = FlowLang.implode(new String[]{args[2]}, block);
         } else {
-            t.validateValue( args[ 2 ], block );
-            value = args[ 2 ];
+            t.validateValue(args[2], block);
+            value = args[2];
         }
 
-        block.addVariable( t, name, value );
+        block.addVariable(t, name, value);
     }
 
 }

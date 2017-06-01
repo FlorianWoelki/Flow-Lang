@@ -12,11 +12,11 @@ import javax.swing.*;
 public class FlowLang {
 
     public static void main(String[] args) {
-        Thread.setDefaultUncaughtExceptionHandler( (thread, e) ->
+        Thread.setDefaultUncaughtExceptionHandler((thread, e) ->
         {
             e.printStackTrace();
-            JOptionPane.showMessageDialog( null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE );
-        } );
+            JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        });
 
         new IDE();
     }
@@ -26,28 +26,28 @@ public class FlowLang {
 
         boolean inQuotes = false;
 
-        for ( String str : strs ) {
-            if ( str.startsWith( "\"" ) ) {
+        for(String str : strs) {
+            if(str.startsWith("\"")) {
                 inQuotes = true;
             }
 
-            if ( !str.contains( "\"" ) ) {
+            if(!str.contains("\"")) {
                 str = str.trim();
             }
 
-            if ( inQuotes ) {
-                builder.append( str.replaceAll( "\"", "" ) );
+            if(inQuotes) {
+                builder.append(str.replaceAll("\"", ""));
             } else {
-                if ( block != null ) {
+                if(block != null) {
                     try {
-                        builder.append( block.getVariable( str ).getValue() );
-                    } catch ( InvalidCodeException e ) {
-                        builder.append( str );
+                        builder.append(block.getVariable(str).getValue());
+                    } catch(InvalidCodeException e) {
+                        builder.append(str);
                     }
                 }
             }
 
-            if ( str.endsWith( "\"" ) ) {
+            if(str.endsWith("\"")) {
                 inQuotes = false;
             }
         }
