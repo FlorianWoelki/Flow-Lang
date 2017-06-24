@@ -20,7 +20,7 @@ public abstract class Block {
     private final List<String> lines;
 
     public Block(Block superBlock) {
-        this.handlers = new ArrayList<CustomLineHandler>();
+        this.handlers = new ArrayList<>();
 
         this.superBlock = superBlock;
         this.vars = new ArrayList<>();
