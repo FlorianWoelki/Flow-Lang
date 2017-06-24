@@ -1,5 +1,6 @@
 package com.florianwoelki.flow;
 
+import com.alee.laf.WebLookAndFeel;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.IDE;
 import com.florianwoelki.flow.lang.Block;
@@ -12,13 +13,16 @@ import javax.swing.*;
 public class FlowLang {
 
     public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            WebLookAndFeel.install();
+            new IDE();
+        });
+
         Thread.setDefaultUncaughtExceptionHandler((thread, e) ->
         {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         });
-
-        new IDE();
     }
 
     public static String implode(String[] strs, Block block) throws InvalidCodeException {

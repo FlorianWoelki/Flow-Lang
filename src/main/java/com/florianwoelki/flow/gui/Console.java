@@ -1,5 +1,6 @@
 package com.florianwoelki.flow.gui;
 
+import com.alee.laf.text.WebTextPane;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 
 import javax.swing.*;
@@ -11,7 +12,7 @@ import java.awt.event.KeyEvent;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class Console extends JTextPane {
+public class Console extends WebTextPane {
 
     private String lastInput;
 

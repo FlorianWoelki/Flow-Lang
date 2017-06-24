@@ -1,5 +1,15 @@
 package com.florianwoelki.flow.gui;
 
+import com.alee.laf.filechooser.WebFileChooser;
+import com.alee.laf.menu.WebMenu;
+import com.alee.laf.menu.WebMenuBar;
+import com.alee.laf.menu.WebMenuItem;
+import com.alee.laf.optionpane.WebOptionPane;
+import com.alee.laf.rootpane.WebFrame;
+import com.alee.laf.scroll.WebScrollPane;
+import com.alee.laf.splitpane.WebSplitPane;
+import com.alee.laf.text.WebTextPane;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
@@ -9,23 +19,23 @@ import java.io.*;
 /**
  * Created by Florian Woelki on 08.11.16.
  */
-public class IDE extends JFrame {
+public class IDE extends WebFrame {
 
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;
 
     private final Console console;
-    private final JTextPane text;
+    private final WebTextPane text;
 
     private final Preferences prefs;
 
     public IDE() {
         super("Flow - IDE");
 
-        text = new JTextPane();
+        text = new WebTextPane();
         text.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
 
-        JScrollPane scroll = new JScrollPane(text);
+        WebScrollPane scroll = new WebScrollPane(text);
         scroll.setBorder(null);
         scroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
@@ -33,19 +43,19 @@ public class IDE extends JFrame {
 
         prefs = new Preferences(this);
 
-        JScrollPane consoleScroll = new JScrollPane(console);
+        WebScrollPane consoleScroll = new WebScrollPane(console);
         consoleScroll.setBorder(null);
         consoleScroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 
-        JSplitPane split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, scroll, consoleScroll);
+        WebSplitPane split = new WebSplitPane(WebSplitPane.HORIZONTAL_SPLIT, scroll, consoleScroll);
         split.setOneTouchExpandable(true);
         split.setDividerLocation(860);
 
         add(split);
 
-        JMenuBar menuBar = new JMenuBar();
-        JMenu menu = new JMenu("File");
-        JMenuItem run = new JMenuItem("Run"), save = new JMenuItem("Save"), load = new JMenuItem("Load"), preferences = new JMenuItem("Preferences");
+        WebMenuBar menuBar = new WebMenuBar();
+        WebMenu menu = new WebMenu("File");
+        WebMenuItem run = new WebMenuItem("Run"), save = new WebMenuItem("Save"), load = new WebMenuItem("Load"), preferences = new WebMenuItem("Preferences");
 
         menuBar.add(menu);
 
@@ -65,12 +75,12 @@ public class IDE extends JFrame {
         save.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, meta));
         save.addActionListener((event) ->
         {
-            JFileChooser chooser = new JFileChooser();
+            WebFileChooser chooser = new WebFileChooser();
             chooser.setFileFilter(new FileNameExtensionFilter("Flow Code", "flow"));
-            chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            chooser.setFileSelectionMode(WebFileChooser.FILES_ONLY);
             chooser.setMultiSelectionEnabled(false);
 
-            if(chooser.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {
+            if(chooser.showSaveDialog(this) == WebFileChooser.APPROVE_OPTION) {
                 try {
                     BufferedWriter writer = new BufferedWriter(new FileWriter(new File(chooser.getSelectedFile().getAbsolutePath() + ".flow")));
 
@@ -88,12 +98,12 @@ public class IDE extends JFrame {
         load.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, meta));
         load.addActionListener((event) ->
         {
-            JFileChooser chooser = new JFileChooser();
+            WebFileChooser chooser = new WebFileChooser();
             chooser.setFileFilter(new FileNameExtensionFilter("Flow Code", "flow"));
-            chooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+            chooser.setFileSelectionMode(WebFileChooser.FILES_ONLY);
             chooser.setMultiSelectionEnabled(false);
 
-            if(chooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            if(chooser.showOpenDialog(this) == WebFileChooser.APPROVE_OPTION) {
                 text.setText("");
 
                 try {
@@ -114,7 +124,7 @@ public class IDE extends JFrame {
         preferences.setEnabled(true);
         preferences.addActionListener((e) ->
         {
-            JOptionPane.showMessageDialog(IDE.this, prefs, "Preferences", JOptionPane.PLAIN_MESSAGE);
+            WebOptionPane.showMessageDialog(IDE.this, prefs, "Preferences", WebOptionPane.PLAIN_MESSAGE);
         });
 
         setSize(WIDTH, HEIGHT);

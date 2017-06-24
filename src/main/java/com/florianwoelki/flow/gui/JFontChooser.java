@@ -4,6 +4,14 @@ package com.florianwoelki.flow.gui;
  * Copyright 2004-2005,2007-2008 Masahiko SAWAI All Rights Reserved.
  ************************************************************/
 
+import com.alee.laf.button.WebButton;
+import com.alee.laf.label.WebLabel;
+import com.alee.laf.list.WebList;
+import com.alee.laf.panel.WebPanel;
+import com.alee.laf.rootpane.WebDialog;
+import com.alee.laf.scroll.WebScrollPane;
+import com.alee.laf.text.WebTextField;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.DocumentEvent;
@@ -58,17 +66,17 @@ public class JFontChooser extends JComponent {
     private String[] fontStyleNames = null;
     private String[] fontFamilyNames = null;
     private String[] fontSizeStrings = null;
-    private JTextField fontFamilyTextField = null;
-    private JTextField fontStyleTextField = null;
-    private JTextField fontSizeTextField = null;
-    private JList fontNameList = null;
-    private JList fontStyleList = null;
-    private JList fontSizeList = null;
-    private JPanel fontNamePanel = null;
-    private JPanel fontStylePanel = null;
-    private JPanel fontSizePanel = null;
-    private JPanel samplePanel = null;
-    private JTextField sampleText = null;
+    private WebTextField fontFamilyTextField = null;
+    private WebTextField fontStyleTextField = null;
+    private WebTextField fontSizeTextField = null;
+    private WebList fontNameList = null;
+    private WebList fontStyleList = null;
+    private WebList fontSizeList = null;
+    private WebPanel fontNamePanel = null;
+    private WebPanel fontStylePanel = null;
+    private WebPanel fontSizePanel = null;
+    private WebPanel samplePanel = null;
+    private WebTextField sampleText = null;
     /**
      * Constructs a <code>JFontChooser</code> object.
      */
@@ -87,13 +95,13 @@ public class JFontChooser extends JComponent {
         }
         this.fontSizeStrings = fontSizeStrings;
 
-        JPanel selectPanel = new JPanel();
+        WebPanel selectPanel = new WebPanel();
         selectPanel.setLayout(new BoxLayout(selectPanel, BoxLayout.X_AXIS));
         selectPanel.add(getFontFamilyPanel());
         selectPanel.add(getFontStylePanel());
         selectPanel.add(getFontSizePanel());
 
-        JPanel contentsPanel = new JPanel();
+        WebPanel contentsPanel = new WebPanel();
         contentsPanel.setLayout(new GridLayout(2, 1));
         contentsPanel.add(selectPanel, BorderLayout.NORTH);
         contentsPanel.add(getSamplePanel(), BorderLayout.CENTER);
@@ -110,7 +118,7 @@ public class JFontChooser extends JComponent {
 
     JTextField getFontFamilyTextField() {
         if(fontFamilyTextField == null) {
-            fontFamilyTextField = new JTextField();
+            fontFamilyTextField = new WebTextField();
             fontFamilyTextField.addFocusListener(
                     new TextFieldFocusHandlerForTextSelection(fontFamilyTextField));
             fontFamilyTextField.addKeyListener(
@@ -125,7 +133,7 @@ public class JFontChooser extends JComponent {
 
     JTextField getFontStyleTextField() {
         if(fontStyleTextField == null) {
-            fontStyleTextField = new JTextField();
+            fontStyleTextField = new WebTextField();
             fontStyleTextField.addFocusListener(
                     new TextFieldFocusHandlerForTextSelection(fontStyleTextField));
             fontStyleTextField.addKeyListener(
@@ -139,7 +147,7 @@ public class JFontChooser extends JComponent {
 
     JTextField getFontSizeTextField() {
         if(fontSizeTextField == null) {
-            fontSizeTextField = new JTextField();
+            fontSizeTextField = new WebTextField();
             fontSizeTextField.addFocusListener(
                     new TextFieldFocusHandlerForTextSelection(fontSizeTextField));
             fontSizeTextField.addKeyListener(
@@ -153,7 +161,7 @@ public class JFontChooser extends JComponent {
 
     JList getFontFamilyList() {
         if(fontNameList == null) {
-            fontNameList = new JList(getFontFamilies());
+            fontNameList = new WebList(getFontFamilies());
             fontNameList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             fontNameList.addListSelectionListener(
                     new ListSelectionHandler(getFontFamilyTextField()));
@@ -166,7 +174,7 @@ public class JFontChooser extends JComponent {
 
     JList getFontStyleList() {
         if(fontStyleList == null) {
-            fontStyleList = new JList(getFontStyleNames());
+            fontStyleList = new WebList(getFontStyleNames());
             fontStyleList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             fontStyleList.addListSelectionListener(
                     new ListSelectionHandler(getFontStyleTextField()));
@@ -179,7 +187,7 @@ public class JFontChooser extends JComponent {
 
     JList getFontSizeList() {
         if(fontSizeList == null) {
-            fontSizeList = new JList(this.fontSizeStrings);
+            fontSizeList = new WebList(this.fontSizeStrings);
             fontSizeList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
             fontSizeList.addListSelectionListener(
                     new ListSelectionHandler(getFontSizeTextField()));
@@ -330,7 +338,7 @@ public class JFontChooser extends JComponent {
      */
     public int showDialog(Component parent) {
         dialogResultValue = ERROR_OPTION;
-        JDialog dialog = createDialog(parent);
+        WebDialog dialog = createDialog(parent);
         dialog.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 dialogResultValue = CANCEL_OPTION;
@@ -343,20 +351,20 @@ public class JFontChooser extends JComponent {
         return dialogResultValue;
     }
 
-    JDialog createDialog(Component parent) {
+    WebDialog createDialog(Component parent) {
         Frame frame = parent instanceof Frame ? (Frame) parent
                 : (Frame) SwingUtilities.getAncestorOfClass(Frame.class, parent);
-        JDialog dialog = new JDialog(frame, _("SelectFont"), true);
+        WebDialog dialog = new WebDialog(frame, _("SelectFont"), true);
 
         Action okAction = new DialogOKAction(dialog);
         Action cancelAction = new DialogCancelAction(dialog);
 
-        JButton okButton = new JButton(okAction);
+        WebButton okButton = new WebButton(okAction);
         okButton.setFont(DEFAULT_FONT);
-        JButton cancelButton = new JButton(cancelAction);
+        WebButton cancelButton = new WebButton(cancelAction);
         cancelButton.setFont(DEFAULT_FONT);
 
-        JPanel buttonsPanel = new JPanel();
+        WebPanel buttonsPanel = new WebPanel();
         buttonsPanel.setLayout(new GridLayout(2, 1));
         buttonsPanel.add(okButton);
         buttonsPanel.add(cancelButton);
@@ -369,7 +377,7 @@ public class JFontChooser extends JComponent {
         inputMap.put(KeyStroke.getKeyStroke("ESCAPE"), cancelAction.getValue(Action.DEFAULT));
         inputMap.put(KeyStroke.getKeyStroke("ENTER"), okAction.getValue(Action.DEFAULT));
 
-        JPanel dialogEastPanel = new JPanel();
+        WebPanel dialogEastPanel = new WebPanel();
         dialogEastPanel.setLayout(new BorderLayout());
         dialogEastPanel.add(buttonsPanel, BorderLayout.NORTH);
 
@@ -387,23 +395,23 @@ public class JFontChooser extends JComponent {
 
     JPanel getFontFamilyPanel() {
         if(fontNamePanel == null) {
-            fontNamePanel = new JPanel();
+            fontNamePanel = new WebPanel();
             fontNamePanel.setLayout(new BorderLayout());
             fontNamePanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
             fontNamePanel.setPreferredSize(new Dimension(180, 130));
 
-            JScrollPane scrollPane = new JScrollPane(getFontFamilyList());
+            WebScrollPane scrollPane = new WebScrollPane(getFontFamilyList());
             scrollPane.getVerticalScrollBar().setFocusable(false);
-            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            scrollPane.setVerticalScrollBarPolicy(WebScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-            JPanel p = new JPanel();
+            WebPanel p = new WebPanel();
             p.setLayout(new BorderLayout());
             p.add(getFontFamilyTextField(), BorderLayout.NORTH);
             p.add(scrollPane, BorderLayout.CENTER);
 
-            JLabel label = new JLabel(_("FontName"));
-            label.setHorizontalAlignment(JLabel.LEFT);
-            label.setHorizontalTextPosition(JLabel.LEFT);
+            WebLabel label = new WebLabel(_("FontName"));
+            label.setHorizontalAlignment(WebLabel.LEFT);
+            label.setHorizontalTextPosition(WebLabel.LEFT);
             label.setLabelFor(getFontFamilyTextField());
             label.setDisplayedMnemonic('F');
 
@@ -416,21 +424,21 @@ public class JFontChooser extends JComponent {
 
     JPanel getFontStylePanel() {
         if(fontStylePanel == null) {
-            fontStylePanel = new JPanel();
+            fontStylePanel = new WebPanel();
             fontStylePanel.setLayout(new BorderLayout());
             fontStylePanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
             fontStylePanel.setPreferredSize(new Dimension(140, 130));
 
-            JScrollPane scrollPane = new JScrollPane(getFontStyleList());
+            WebScrollPane scrollPane = new WebScrollPane(getFontStyleList());
             scrollPane.getVerticalScrollBar().setFocusable(false);
-            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            scrollPane.setVerticalScrollBarPolicy(WebScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-            JPanel p = new JPanel();
+            WebPanel p = new WebPanel();
             p.setLayout(new BorderLayout());
             p.add(getFontStyleTextField(), BorderLayout.NORTH);
             p.add(scrollPane, BorderLayout.CENTER);
 
-            JLabel label = new JLabel(_("FontStyle"));
+            WebLabel label = new WebLabel(_("FontStyle"));
             label.setHorizontalAlignment(JLabel.LEFT);
             label.setHorizontalTextPosition(JLabel.LEFT);
             label.setLabelFor(getFontStyleTextField());
@@ -444,21 +452,21 @@ public class JFontChooser extends JComponent {
 
     JPanel getFontSizePanel() {
         if(fontSizePanel == null) {
-            fontSizePanel = new JPanel();
+            fontSizePanel = new WebPanel();
             fontSizePanel.setLayout(new BorderLayout());
             fontSizePanel.setPreferredSize(new Dimension(70, 130));
             fontSizePanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-            JScrollPane scrollPane = new JScrollPane(getFontSizeList());
+            WebScrollPane scrollPane = new WebScrollPane(getFontSizeList());
             scrollPane.getVerticalScrollBar().setFocusable(false);
-            scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+            scrollPane.setVerticalScrollBarPolicy(WebScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-            JPanel p = new JPanel();
+            WebPanel p = new WebPanel();
             p.setLayout(new BorderLayout());
             p.add(getFontSizeTextField(), BorderLayout.NORTH);
             p.add(scrollPane, BorderLayout.CENTER);
 
-            JLabel label = new JLabel(_("FontSize"));
+            WebLabel label = new WebLabel(_("FontSize"));
             label.setHorizontalAlignment(JLabel.LEFT);
             label.setHorizontalTextPosition(JLabel.LEFT);
             label.setLabelFor(getFontSizeTextField());
@@ -477,7 +485,7 @@ public class JFontChooser extends JComponent {
             Border empty = BorderFactory.createEmptyBorder(5, 10, 10, 10);
             Border border = BorderFactory.createCompoundBorder(titledBorder, empty);
 
-            samplePanel = new JPanel();
+            samplePanel = new WebPanel();
             samplePanel.setLayout(new BorderLayout());
             samplePanel.setBorder(border);
 
@@ -490,7 +498,7 @@ public class JFontChooser extends JComponent {
         if(sampleText == null) {
             Border lowered = BorderFactory.createLoweredBevelBorder();
 
-            sampleText = new JTextField(_("SampleString"));
+            sampleText = new WebTextField(_("SampleString"));
             sampleText.setBorder(lowered);
             sampleText.setPreferredSize(new Dimension(300, 100));
         }
@@ -526,7 +534,7 @@ public class JFontChooser extends JComponent {
 
         public void valueChanged(ListSelectionEvent e) {
             if(!e.getValueIsAdjusting()) {
-                JList list = (JList) e.getSource();
+                WebList list = (WebList) e.getSource();
                 String selectedValue = (String) list.getSelectedValue();
 
                 String oldValue = textComponent.getText();
@@ -648,9 +656,9 @@ public class JFontChooser extends JComponent {
 
     class DialogOKAction extends AbstractAction {
         static final String ACTION_NAME = "OK";
-        private final JDialog dialog;
+        private final WebDialog dialog;
 
-        DialogOKAction(JDialog dialog) {
+        DialogOKAction(WebDialog dialog) {
             this.dialog = dialog;
             putValue(Action.DEFAULT, ACTION_NAME);
             putValue(Action.ACTION_COMMAND_KEY, ACTION_NAME);
@@ -665,9 +673,9 @@ public class JFontChooser extends JComponent {
 
     class DialogCancelAction extends AbstractAction {
         static final String ACTION_NAME = "Cancel";
-        private final JDialog dialog;
+        private final WebDialog dialog;
 
-        DialogCancelAction(JDialog dialog) {
+        DialogCancelAction(WebDialog dialog) {
             this.dialog = dialog;
             putValue(Action.DEFAULT, ACTION_NAME);
             putValue(Action.ACTION_COMMAND_KEY, ACTION_NAME);
