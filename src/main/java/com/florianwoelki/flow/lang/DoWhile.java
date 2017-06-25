@@ -4,11 +4,11 @@ import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 
 /**
- * Created by Florian Woelki on 08.11.16.
+ * Created by Florian Woelki on 25.06.17.
  */
-public class While extends ConditionalBlock {
+public class DoWhile extends ConditionalBlock {
 
-    public While(Block superBlock, String aVal, String bVal, CompareOperation compareOp) {
+    public DoWhile(Block superBlock, String aVal, String bVal, CompareOperation compareOp) {
         super(superBlock, aVal, bVal, compareOp);
     }
 
@@ -17,14 +17,7 @@ public class While extends ConditionalBlock {
         if(compareOp == CompareOperation.EQUALS) {
             int a, b;
 
-            try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
-            } catch(Exception e) {
-                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
-            }
-
-            while(a == b) {
+            do {
                 try {
                     a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
                     b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
@@ -34,17 +27,11 @@ public class While extends ConditionalBlock {
 
                 doBlocks();
             }
+            while(a == b);
         } else if(compareOp == CompareOperation.NOTEQUALS) {
             int a, b;
 
-            try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
-            } catch(Exception e) {
-                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
-            }
-
-            while(a != b) {
+            do {
                 try {
                     a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
                     b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
@@ -54,17 +41,11 @@ public class While extends ConditionalBlock {
 
                 doBlocks();
             }
+            while(a != b);
         } else if(compareOp == CompareOperation.GREATERTHAN) {
             int a, b;
 
-            try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
-            } catch(Exception e) {
-                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
-            }
-
-            while(a > b) {
+            do {
                 try {
                     a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
                     b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
@@ -74,17 +55,11 @@ public class While extends ConditionalBlock {
 
                 doBlocks();
             }
+            while(a > b);
         } else if(compareOp == CompareOperation.LESSTHAN) {
             int a, b;
 
-            try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
-            } catch(Exception e) {
-                throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
-            }
-
-            while(a < b) {
+            do {
                 try {
                     a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
                     b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
@@ -94,12 +69,13 @@ public class While extends ConditionalBlock {
 
                 doBlocks();
             }
+            while(a < b);
         }
     }
 
     @Override
     public String toString() {
-        return "While aVal=" + aVal + " bVal=" + bVal + " compareOp=" + compareOp.name();
+        return "DoWhile aVal=" + aVal + " bVal=" + bVal + " compareOp=" + compareOp.name();
     }
 
 }

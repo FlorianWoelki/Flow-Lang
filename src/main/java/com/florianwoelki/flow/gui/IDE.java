@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  */
 public class IDE extends WebFrame {
 
-    public static final String[] FLOW_KEYWORDS = new String[]{"declare", "getinput", "print", "random", "set", "fn", "void", "for", "end", "integer", "while", "if", "elseif", "else", "string", "boolean"};
+    public static final String[] FLOW_KEYWORDS = new String[]{"declare", "getinput", "print", "random", "set", "fn", "void", "for", "end", "integer", "while", "if", "elseif", "else", "string", "boolean", "dowhile"};
     public static final String FLOW_KEYWORDS_REGEX;
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;

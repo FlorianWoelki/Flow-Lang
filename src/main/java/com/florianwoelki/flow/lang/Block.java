@@ -129,6 +129,8 @@ public abstract class Block {
                                 currentBlock = new ElseIf(this, a, b, op);
                             } else if(bt == ConditionalBlock.ConditionalBlockType.WHILE) {
                                 currentBlock = new While(this, a, b, op);
+                            } else if(bt == ConditionalBlock.ConditionalBlockType.DOWHILE) {
+                                currentBlock = new DoWhile(this, a, b, op);
                             } else if(bt == ConditionalBlock.ConditionalBlockType.FOR) {
                                 currentBlock = new For(this, a, b);
                             }

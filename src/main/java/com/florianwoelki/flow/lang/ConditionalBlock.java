@@ -30,7 +30,8 @@ public abstract class ConditionalBlock extends Block {
         ELSE,
         ELSEIF,
         WHILE,
-        FOR;
+        DOWHILE,
+        FOR
     }
 
     enum CompareOperation {
