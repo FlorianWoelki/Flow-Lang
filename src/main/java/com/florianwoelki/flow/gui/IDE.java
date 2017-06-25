@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  */
 public class IDE extends WebFrame {
 
-    public static final String[] FLOW_KEYWORDS = new String[]{"declare", "getinput", "print", "random", "set", "method", "void", "for", "end", "integer", "while", "if", "elseif", "else", "string", "boolean"};
+    public static final String[] FLOW_KEYWORDS = new String[]{"declare", "getinput", "print", "random", "set", "fn", "void", "for", "end", "integer", "while", "if", "elseif", "else", "string", "boolean"};
     public static final String FLOW_KEYWORDS_REGEX;
     public static final int WIDTH = 1280;
     public static final int HEIGHT = 720;
@@ -57,6 +57,7 @@ public class IDE extends WebFrame {
                 clearTextColors();
                 Pattern pattern = Pattern.compile(FLOW_KEYWORDS_REGEX);
                 Matcher matcher = pattern.matcher(text.getText());
+
                 while(matcher.find()) {
                     updateTextColor(matcher.start(), matcher.end() - matcher.start());
                 }

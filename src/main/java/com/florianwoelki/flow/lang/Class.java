@@ -32,7 +32,7 @@ public class Class extends Block {
         for(String line : code) {
             line = trimComments(line);
 
-            if(line.startsWith("method ")) {
+            if(line.startsWith("fn ")) {
                 String[] args = line.split(" ");
                 String[] mArgs = args[1].split(":");
                 String methodName = mArgs[0];
