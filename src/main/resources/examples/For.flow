@@ -1,4 +1,4 @@
-method main:void
+fn main:void
 	declare(integer, i, 0)
 	declare(integer, j, 10)
 

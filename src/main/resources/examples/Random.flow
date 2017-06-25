@@ -1,4 +1,4 @@
-method main:void
+fn main:void
 	declare(integer, x, 0)
 	random(20) x
 

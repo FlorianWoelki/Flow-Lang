@@ -1,4 +1,4 @@
-method main:void
+fn main:void
 	declare(integer, intO, 20)
 	set("30") intO
 

@@ -1,4 +1,4 @@
-method main:void
+fn main:void
 	print("Welcome to Guess the Number")
 	print("Type a guess to continue.")
 	declare(integer, x, 0)

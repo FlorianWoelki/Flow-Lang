@@ -1,4 +1,4 @@
-method main:void
+fn main:void
     while 5 == 5
         print("Working")
     end
