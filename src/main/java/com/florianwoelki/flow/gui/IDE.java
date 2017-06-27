@@ -66,6 +66,15 @@ public class IDE extends WebFrame {
         text.getDocument().putProperty(DefaultEditorKit.EndOfLineStringProperty, "\n");
         textEditorDoc = text.getStyledDocument();
 
+        text.setText("fn main:void\n\nend main");
+        clearTextColors();
+        Pattern pattern = Pattern.compile(FLOW_KEYWORDS_REGEX);
+        Matcher matcher = pattern.matcher(text.getText());
+
+        while(matcher.find()) {
+            updateTextColor(matcher.start(), matcher.end() - matcher.start());
+        }
+
         WebScrollPane scroll = new WebScrollPane(text);
         scroll.setBorder(null);
         scroll.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
@@ -148,8 +157,6 @@ public class IDE extends WebFrame {
                 }
 
                 clearTextColors();
-                Pattern pattern = Pattern.compile(FLOW_KEYWORDS_REGEX);
-                Matcher matcher = pattern.matcher(text.getText());
                 while(matcher.find()) {
                     updateTextColor(matcher.start(), matcher.end() - matcher.start());
                 }
