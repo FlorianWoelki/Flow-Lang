@@ -58,6 +58,8 @@ public class IDE extends WebFrame {
                 Pattern pattern = Pattern.compile(FLOW_KEYWORDS_REGEX);
                 Matcher matcher = pattern.matcher(text.getText());
 
+                clearTextColors();
+
                 while(matcher.find()) {
                     updateTextColor(matcher.start(), matcher.end() - matcher.start());
                 }
@@ -176,13 +178,19 @@ public class IDE extends WebFrame {
     }
 
     public void updateTextColor(int offset, int length, Color color) {
-        StyleContext styleContext = StyleContext.getDefaultStyleContext();
-        AttributeSet attributeSet = styleContext.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.Foreground, color);
-        textEditorDoc.setCharacterAttributes(offset, length, attributeSet, true);
+        SimpleAttributeSet simpleAttributeSet = new SimpleAttributeSet();
+        if(color == null) {
+            StyleConstants.setForeground(simpleAttributeSet, Color.BLACK);
+            StyleConstants.setItalic(simpleAttributeSet, false);
+        } else {
+            StyleConstants.setForeground(simpleAttributeSet, color);
+            StyleConstants.setItalic(simpleAttributeSet, true);
+        }
+        textEditorDoc.setCharacterAttributes(offset, length, simpleAttributeSet, true);
     }
 
     public void clearTextColors() {
-        updateTextColor(0, text.getText().length(), Color.BLACK);
+        updateTextColor(0, text.getText().length(), null);
     }
 
     public void updateTextColor(int offset, int length) {
