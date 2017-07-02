@@ -68,7 +68,7 @@ public class IDE extends WebFrame {
         text.getDocument().putProperty(DefaultEditorKit.EndOfLineStringProperty, "\n");
         textEditorDoc = text.getStyledDocument();
 
-        text.setText("fn main:void\n\nend main");
+        text.setText("fn main:void\n\tprint(\"Hello World\")\nend main");
         clearTextColors();
         Pattern pattern = Pattern.compile(FLOW_KEYWORDS_REGEX);
         Matcher matcher = pattern.matcher(text.getText());
@@ -109,7 +109,7 @@ public class IDE extends WebFrame {
 
         setJMenuBar(menuBar);
 
-        int meta = System.getProperty("os.name").startsWith("Mac") ? KeyEvent.META_DOWN_MASK : KeyEvent.CTRL_DOWN_MASK;
+        int meta = KeyEvent.CTRL_DOWN_MASK;
 
         run.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_R, meta));
         run.addActionListener((e) -> console.run(new com.florianwoelki.flow.lang.Class(text.getText().split("\n"))));
