@@ -1,5 +1,5 @@
 fn main:void
 	declare(integer, x, 0)
 	getinput() x
-	print("Input was ", x)
+	println("Input was ", x)
 end main

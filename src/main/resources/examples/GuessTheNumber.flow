@@ -1,6 +1,6 @@
 fn main:void
-	print("Welcome to Guess the Number")
-	print("Type a guess to continue.")
+	println("Welcome to Guess the Number")
+	println("Type a guess to continue.")
 	declare(integer, x, 0)
 	random(10) x
 
@@ -9,13 +9,13 @@ fn main:void
 		if x != input
 			getinput() input
 			if x < input
-				print("Your guess is too high.")
+				println("Your guess is too high.")
 			end
 			elseif x > input
-				print("Your guess is too low.")
+				println("Your guess is too low.")
 			end
 		end
 	end
 
-	print("You won the game")
+	println("You won the game")
 end main

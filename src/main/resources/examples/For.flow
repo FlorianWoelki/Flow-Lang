@@ -3,6 +3,6 @@ fn main:void
 	declare(integer, j, 10)
 
 	for i < j
-		print(i)
+		println(i)
 	end
 end main
