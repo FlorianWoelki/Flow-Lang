@@ -23,6 +23,7 @@ public class FunctionManager {
         this.console = console;
 
         this.functions.add(new Print());
+        this.functions.add(new PrintLn());
         this.functions.add(new Declare());
         this.functions.add(new Random());
         this.functions.add(new GetInput());
@@ -34,7 +35,7 @@ public class FunctionManager {
 
         String[] args;
 
-        if(funct.equals("print")) {
+        if(funct.equals("print") || funct.equals("println")) {
             args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).split(",");
         } else {
             args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).replaceAll(" ", "").split(",");

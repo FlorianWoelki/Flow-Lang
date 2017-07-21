@@ -32,15 +32,15 @@ public class Console extends WebTextPane {
                 } else if(event.getKeyCode() == KeyEvent.VK_ENTER) {
                     lastInput = getText().split("\n")[getText().split("\n").length - 1];
 
-                    if(waiting) result = lastInput;
+                    if(waiting)
+                        result = lastInput;
                 }
             }
         });
     }
 
     public void run(final com.florianwoelki.flow.lang.Class clazz) {
-        new Thread(() ->
-        {
+        new Thread(() -> {
             try {
                 clazz.run(Console.this);
             } catch(InvalidCodeException e) {
@@ -70,24 +70,26 @@ public class Console extends WebTextPane {
     }
 
     public void clear() {
-        SwingUtilities.invokeLater(() ->
-        {
+        SwingUtilities.invokeLater(() -> {
             setText("");
             setCaret();
         });
     }
 
     public void write(String text) {
-        SwingUtilities.invokeLater(() ->
-        {
+        SwingUtilities.invokeLater(() -> {
             try {
-                getDocument().insertString(getDocument().getLength(), text + "\n", null);
+                getDocument().insertString(getDocument().getLength(), text, null);
             } catch(BadLocationException e) {
                 e.printStackTrace();
             }
 
             setCaret();
         });
+    }
+
+    public void writeLine(String text) {
+        write(text + "\n");
     }
 
     public void remove(final DocumentFilter.FilterBypass fb, final int offset, final int length) throws BadLocationException {
