@@ -28,6 +28,7 @@ public class FunctionManager {
         this.functions.add(new Random());
         this.functions.add(new GetInput());
         this.functions.add(new Set());
+        this.functions.add(new Math());
     }
 
     public void parse(Block block, String input) throws InvalidCodeException {
