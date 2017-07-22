@@ -27,7 +27,7 @@ public class Set extends Function {
         }
 
         receiver.getType().validateValue(args[0], block);
-        receiver.setValue(FlowLang.implode(new String[]{args[0]}, block));
+        receiver.setValue(FlowLang.implode(Arrays.copyOfRange(args, 1, args.length), block));
     }
 
 }

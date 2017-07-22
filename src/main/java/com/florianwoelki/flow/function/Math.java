@@ -1,5 +1,6 @@
 package com.florianwoelki.flow.function;
 
+import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
 import com.florianwoelki.flow.lang.Block;
@@ -7,7 +8,7 @@ import com.florianwoelki.flow.lang.Variable;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+import java.util.Arrays;
 
 /**
  * Created by Florian Woelki on 22.07.17.
@@ -33,7 +34,7 @@ public class Math extends Function {
         }
 
         try {
-            variable.setValue(new Double(Double.parseDouble(scriptEngine.eval(args[1]).toString())).intValue());
+            variable.setValue(new Double(Double.parseDouble(scriptEngine.eval(FlowLang.implode(Arrays.copyOfRange(args, 1, args.length), block)).toString())).intValue());
         } catch(Exception e) {
             throw new InvalidCodeException("Invalid math expression!");
         }
