@@ -20,7 +20,7 @@ public class Print extends Function {
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
-        console.write(FlowLang.implode(args, block));
+        console.write(FlowLang.implode(args[0], block));
     }
 
 }

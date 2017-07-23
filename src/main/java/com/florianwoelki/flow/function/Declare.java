@@ -18,10 +18,16 @@ public class Declare extends Function {
     }
 
     /*
-    Usage: declare(<type>, <varname>, <value>)
+    Usage: declare(<type>([]), <varname>, [value])
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
+        boolean isArray = args[0].endsWith("[]");
+
+        if(isArray) {
+            args[0] = args[0].substring(0, args[0].length() - 2);
+        }
+
         Variable.VariableType t = Variable.VariableType.match(args[0]);
 
         if(t == Variable.VariableType.VOID) {
@@ -30,16 +36,18 @@ public class Declare extends Function {
 
         String name = args[1];
 
-        Object value;
+        Object value = null;
 
-        if(t == Variable.VariableType.STRING) {
-            value = FlowLang.implode(new String[]{args[2]}, block);
-        } else {
-            t.validateValue(args[2], block);
-            value = args[2];
+        if(args.length >= 3) {
+            if(t == Variable.VariableType.STRING) {
+                value = FlowLang.implode(args[2], block);
+            } else {
+                t.validateValue(args[2], block);
+                value = args[2];
+            }
         }
 
-        block.addVariable(t, name, value);
+        block.addVariable(t, name, isArray, value);
     }
 
 }

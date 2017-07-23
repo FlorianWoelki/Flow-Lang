@@ -60,7 +60,11 @@ public abstract class Block {
     }
 
     public void addVariable(Variable.VariableType t, String name, Object value) {
-        vars.add(new Variable(t, name, value));
+        vars.add(new Variable(t, name, false, value));
+    }
+
+    public void addVariable(Variable.VariableType t, String name, boolean isArray, Object value) {
+        vars.add(new Variable(t, name, isArray, value));
     }
 
     public Variable getVariable(String name) throws InvalidCodeException {

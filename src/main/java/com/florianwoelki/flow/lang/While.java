@@ -18,16 +18,16 @@ public class While extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
             while(a == b) {
                 try {
-                    a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                    b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                    a = Integer.parseInt(FlowLang.implode(aVal, this));
+                    b = Integer.parseInt(FlowLang.implode(bVal, this));
                 } catch(Exception e) {
                     throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
                 }
@@ -38,16 +38,16 @@ public class While extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
             while(a != b) {
                 try {
-                    a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                    b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                    a = Integer.parseInt(FlowLang.implode(aVal, this));
+                    b = Integer.parseInt(FlowLang.implode(bVal, this));
                 } catch(Exception e) {
                     throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
                 }
@@ -58,16 +58,16 @@ public class While extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
             while(a > b) {
                 try {
-                    a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                    b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                    a = Integer.parseInt(FlowLang.implode(aVal, this));
+                    b = Integer.parseInt(FlowLang.implode(bVal, this));
                 } catch(Exception e) {
                     throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers.");
                 }
@@ -78,16 +78,16 @@ public class While extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
 
             while(a < b) {
                 try {
-                    a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                    b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                    a = Integer.parseInt(FlowLang.implode(aVal, this));
+                    b = Integer.parseInt(FlowLang.implode(bVal, this));
                 } catch(Exception e) {
                     throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers.");
                 }

@@ -1,5 +1,6 @@
 package com.florianwoelki.flow.function;
 
+import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
 import com.florianwoelki.flow.lang.Block;
@@ -34,12 +35,10 @@ public class FunctionManager {
     public void parse(Block block, String input) throws InvalidCodeException {
         String funct = input.substring(0, input.indexOf("(")).trim();
 
-        String[] args;
+        String[] args = FlowLang.changeCommas(input.substring(input.indexOf("(") + 1, input.indexOf(")"))).split(",");
 
-        if(funct.equals("print") || funct.equals("println")) {
-            args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).split(",");
-        } else {
-            args = input.substring(input.indexOf("(") + 1, input.indexOf(")")).replaceAll(" ", "").split(",");
+        for(int i = 0; i < args.length; i++) {
+            args[i] = FlowLang.unchangeCommas(args[i]);
         }
 
         Variable receiver = null;

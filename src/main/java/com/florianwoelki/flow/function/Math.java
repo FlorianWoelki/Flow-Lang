@@ -34,7 +34,7 @@ public class Math extends Function {
         }
 
         try {
-            variable.setValue(new Double(Double.parseDouble(scriptEngine.eval(FlowLang.implode(Arrays.copyOfRange(args, 1, args.length), block)).toString())).intValue());
+            variable.setValue(new Double(Double.parseDouble(scriptEngine.eval(FlowLang.implode(args[0], block)).toString())).intValue());
         } catch(Exception e) {
             throw new InvalidCodeException("Invalid math expression!");
         }

@@ -24,7 +24,7 @@ public class Method extends Block {
                 }
 
                 getReturnType().validateValue(line.split(" ")[1], sB);
-                returnValue = FlowLang.implode(new String[]{line.split(" ")[1]}, sB);
+                returnValue = FlowLang.implode(line.split(" ")[1], sB);
                 return true;
             }
         });

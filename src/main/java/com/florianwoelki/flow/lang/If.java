@@ -25,12 +25,12 @@ public class If extends ConditionalBlock {
         boolean opSuccess = false;
 
         if(compareOp == CompareOperation.EQUALS) {
-            if(FlowLang.implode(new String[]{aVal}, this).equals(FlowLang.implode(new String[]{bVal}, this))) {
+            if(FlowLang.implode(aVal, this).equals(FlowLang.implode(bVal, this))) {
                 doBlocks();
                 opSuccess = true;
             }
         } else if(compareOp == CompareOperation.NOTEQUALS) {
-            if(!FlowLang.implode(new String[]{aVal}, this).equals(FlowLang.implode(new String[]{bVal}, this))) {
+            if(!FlowLang.implode(aVal, this).equals(FlowLang.implode(bVal, this))) {
                 doBlocks();
                 opSuccess = true;
             }
@@ -38,8 +38,8 @@ public class If extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }
@@ -52,8 +52,8 @@ public class If extends ConditionalBlock {
             int a, b;
 
             try {
-                a = Integer.parseInt(FlowLang.implode(new String[]{aVal}, this));
-                b = Integer.parseInt(FlowLang.implode(new String[]{bVal}, this));
+                a = Integer.parseInt(FlowLang.implode(aVal, this));
+                b = Integer.parseInt(FlowLang.implode(bVal, this));
             } catch(Exception e) {
                 throw new InvalidCodeException("Attempted to use " + compareOp.name().toLowerCase() + " on non-integers");
             }

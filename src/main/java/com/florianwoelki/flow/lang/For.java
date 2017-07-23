@@ -22,8 +22,8 @@ public class For extends Block {
         double a, b;
 
         try {
-            a = Double.valueOf(FlowLang.implode(new String[]{lower}, this));
-            b = Double.valueOf(FlowLang.implode(new String[]{upper}, this));
+            a = Double.valueOf(FlowLang.implode(lower, this));
+            b = Double.valueOf(FlowLang.implode(upper, this));
         } catch(Exception e) {
             throw new InvalidCodeException("Attempted to use for loop with non-number bounds.");
         }
