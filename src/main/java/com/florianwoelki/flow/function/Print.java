@@ -3,6 +3,7 @@ package com.florianwoelki.flow.function;
 import com.florianwoelki.flow.FlowLang;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
+import com.florianwoelki.flow.gui.OutputType;
 import com.florianwoelki.flow.lang.Block;
 import com.florianwoelki.flow.lang.Variable;
 
@@ -20,7 +21,7 @@ public class Print extends Function {
      */
     @Override
     public void run(Console console, Block block, String[] args, Variable receiver) throws InvalidCodeException {
-        console.write(FlowLang.implode(args[0], block));
+        console.write(OutputType.OUTPUT, FlowLang.implode(args[0], block));
     }
 
 }

@@ -3,6 +3,7 @@ package com.florianwoelki.flow.lang;
 import com.florianwoelki.flow.function.FunctionManager;
 import com.florianwoelki.flow.exception.InvalidCodeException;
 import com.florianwoelki.flow.gui.Console;
+import com.florianwoelki.flow.gui.OutputType;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -65,7 +66,7 @@ public class Class extends Block {
         main.run();
         main.invoke(new String[0]);
 
-        console.write("--Terminated.");
+        console.write(OutputType.INFO, "--Terminated.");
     }
 
     private String trimComments(String str) {

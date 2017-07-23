@@ -76,10 +76,10 @@ public class Console extends WebTextPane {
         });
     }
 
-    public void write(String text) {
+    public void write(OutputType outputType, String text) {
         SwingUtilities.invokeLater(() -> {
             try {
-                getDocument().insertString(getDocument().getLength(), text, null);
+                getDocument().insertString(getDocument().getLength(), text, outputType.getAttributes());
             } catch(BadLocationException e) {
                 e.printStackTrace();
             }
@@ -88,8 +88,8 @@ public class Console extends WebTextPane {
         });
     }
 
-    public void writeLine(String text) {
-        write(text + "\n");
+    public void writeLine(OutputType outputType, String text) {
+        write(outputType, text + "\n");
     }
 
     public void remove(final DocumentFilter.FilterBypass fb, final int offset, final int length) throws BadLocationException {

@@ -137,6 +137,8 @@ public abstract class Block {
                                 currentBlock = new DoWhile(this, a, b, op);
                             } else if(bt == ConditionalBlock.ConditionalBlockType.FOR) {
                                 currentBlock = new For(this, a, b);
+                            } else if(bt == ConditionalBlock.ConditionalBlockType.FOREACH) {
+                                currentBlock = new Foreach(this, args[0], args[1]);
                             }
                         }
                     } else {
