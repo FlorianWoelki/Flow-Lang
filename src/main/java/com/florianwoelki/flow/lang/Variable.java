@@ -21,6 +21,13 @@ public class Variable {
         this.name = name;
         this.isArray = isArray;
         this.values = new ArrayList<>(Arrays.asList(values));
+
+        if(isArray) {
+            Object[] splittedArray = this.values.get(0).toString().split(",");
+
+            this.values.addAll(Arrays.asList(splittedArray));
+            this.values.remove(0);
+        }
     }
 
     public VariableType getType() {
@@ -30,7 +37,6 @@ public class Variable {
     public String getName() {
         return name;
     }
-
 
     public Object getValue() throws InvalidCodeException {
         if(isArray) {
